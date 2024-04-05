@@ -1,3 +1,4 @@
+-- Active: 1711142519797@@35.87.147.206@3306@forgiving_monk_a379d6_db
 CREATE TABLE IF NOT EXISTS accounts(
   id VARCHAR(255) NOT NULL primary key COMMENT 'primary key',
   createdAt DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT 'Time Created',
