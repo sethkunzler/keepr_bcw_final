@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Http.HttpResults;
+
 namespace keepr_bcw_final.Controllers;
 
 [ApiController]
@@ -23,6 +25,19 @@ public class KeepsController : ControllerBase
       keepData.CreatorId = userInfo.Id;
       Keep keep = _keepsService.CreateKeep(keepData);
       return Ok(keep);
+    }
+    catch (Exception exception)
+    {
+      return BadRequest(exception.Message);
+    }
+  }
+  [HttpGet]
+  public ActionResult<List<Keep>> GetKeeps()
+  {
+    try
+    {
+      List<Keep> keeps = _keepsService.GetKeeps();
+      return Ok(keeps);
     }
     catch (Exception exception)
     {

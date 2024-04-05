@@ -14,4 +14,10 @@ public class KeepsService
     Keep keep = _repository.Create(keepData);
     return keep;
   }
+
+  internal List<Keep> GetKeeps()
+  {
+    List<Keep> keeps = _repository.GetAll();
+    return keeps;
+  }
 }

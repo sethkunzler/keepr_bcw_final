@@ -18,6 +18,6 @@ CREATE TABLE keeps(
   views INT NOT NULL DEFAULT 0,
   creatorId VARCHAR(255) NOT NULL,
   FOREIGN KEY (creatorId) REFERENCES accounts (id) ON DELETE CASCADE
-);
   -- Creator profile is a Virtual
   -- Kept Count is a Virtual
+);
