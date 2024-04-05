@@ -1,3 +1,4 @@
+
 namespace keepr_bcw_final.Services;
 
 public class KeepsService
@@ -19,5 +20,12 @@ public class KeepsService
   {
     List<Keep> keeps = _repository.GetAll();
     return keeps;
+  }
+
+  internal Keep GetKeepsById(int keepId)
+  {
+    Keep keep = _repository.GetById(keepId);
+    if (keep == null) throw new Exception($"Invalid Id: {keepId}");
+    return keep;
   }
 }

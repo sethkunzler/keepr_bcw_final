@@ -43,7 +43,15 @@ public class KeepsRepository : IRepo<Keep>
 
   public Keep GetById(int id)
   {
-    throw new NotImplementedException();
+    string sql= @"
+    SELECT 
+    keep.*,
+    account.*
+    FROM keeps keep
+    JOIN accounts account ON account.id = keep.creatorId
+    WHERE keep.id = @id;";
+    Keep keep = _db.Query<Keep, Profile, Keep>(sql, _populateCreator, new { id }).FirstOrDefault();
+    return keep;
   }
 
   public Keep Update(Keep data)
