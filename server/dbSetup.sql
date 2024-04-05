@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS accounts(
   picture varchar(255) COMMENT 'User Picture'
 ) default charset utf8mb4 COMMENT '';
 
-CREATE TABLE keep(
+CREATE TABLE keeps(
   id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
   createdAt DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT 'Time Created',
   updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Last Update',
@@ -17,7 +17,7 @@ CREATE TABLE keep(
   img VARCHAR(1000) NOT NULL,
   views INT NOT NULL DEFAULT 0,
   creatorId VARCHAR(255) NOT NULL,
-  FOREIGN KEY (creatorId) REFERENCES accounts (id) ON DELETE CASCADE,
+  FOREIGN KEY (creatorId) REFERENCES accounts (id) ON DELETE CASCADE
+);
   -- Creator profile is a Virtual
   -- Kept Count is a Virtual
-);

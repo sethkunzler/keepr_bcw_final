@@ -8,5 +8,10 @@ public class KeepsService
   {
     _repository = repository;
   }
-  
+
+  internal Keep CreateKeep(Keep keepData)
+  {
+    Keep keep = _repository.Create(keepData);
+    return keep;
+  }
 }
