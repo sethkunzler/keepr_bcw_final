@@ -68,7 +68,7 @@ Thursday Morning 4hrs
 
 Thursday Afternoon 3hrs
 1:30 - 4:00 {To PLAN}
-4:00 - 5:00 **SECOND GRADING** after 51 secheduled hours
+4:00 - 5:00 **SECOND GRADING** after 51 scheduled hours
 
 Thursday Night 2hrs
 7:00 - 9:00 {To PLAN}

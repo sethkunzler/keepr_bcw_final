@@ -1,8 +1,8 @@
 namespace keepr_bcw_final.Models;
 
-public abstract class RepoItem
+public abstract class RepoItem<T>
 {
-  public int Id { get; set; }
+  public T Id { get; set; }
   public DateTime CreatedAt { get; set; }
   public DateTime UpdatedAt { get; set; }
 }
