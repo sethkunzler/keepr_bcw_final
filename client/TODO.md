@@ -4,7 +4,7 @@ High Fidelity Mock:
   [https://www.figma.com/proto/5ImMGVfWaUJwSYLU4xscBk/Keepr?scaling=scale-down&page-id=0%3A1&starting-point-node-id=7786%3A144&node-id=7786-144]
 
 PLAN: 
-Friday 
+Friday - 8hrs
 12:00 - 12:30 - setting up auth and env and plan
 plan
 1:30 - 4:00 - BE: passing first couple of postman tests Keeps: create and get
@@ -12,7 +12,7 @@ plan
 
 7:00 - 9:00 - BE: Put and Delete Keeps 
 
-Saturday
+Saturday - 3hrs
 7:00 - 8:30 - FE: put and Delete keeps 
 9 --- Breakfast and travel
 10-12 --- General Conference
@@ -28,7 +28,7 @@ Saturday
 6-8 --- General Conference 
 8-9 --- Chilling & going home
 
-Sunday
+Sunday 4hrs
 
 7:00 - 8:30 - FE: Get Vault 
 9-10 --- Breakfast & heading out
@@ -41,9 +41,42 @@ Sunday
 6-8 --- Chilling & going home 
 8:00 - 9:00 - BE: get Vault Keeps
 
-Monday 
+Monday 10hrs
 8:00 - 8:30  revaluate where I am at and create the plan for the rest of the week.
+9:00 - 12:30 {To PLAN}
+1:30 - 5:00 {To PLAN}
+7:00 - 9:00 {To PLAN}
 
+Tuesday 10hrs
+8:00 - 12:30 {To PLAN}
+1:30 - 5:00 {To PLAN}
+7:00 - 9:00 {To PLAN}
+
+Wednesday Morning
+8:00 - 9:00 **FIRST GRADING** After 35 scheduled hours
+
+Wednesday 9hrs
+9:00 - 12:30 {To PLAN}
+1:30 - 5:00 {To PLAN}
+7:00 - 9:00 {To PLAN}
+
+Thursday Morning 4hrs
+8:00 - 12:30 {To PLAN}
+** (( Plan to be done by this point ))
+
+Thursday Afternoon 3hrs
+1:30 - 4:00 {To PLAN}
+4:00 - 5:00 **SECOND GRADING** after 51 secheduled hours
+
+Thursday Night 2hrs
+7:00 - 9:00 {To PLAN}
+
+Friday 7hrs
+8:00 - 12:30 {To PLAN}
+1:30 - 4:00 {To PLAN}
+4:00 - 5:00 **LAST GRADING** after 60 scheduled hours
+
+enjoy te weekend
 
 Actual - 
 TOTAL HOURS:
