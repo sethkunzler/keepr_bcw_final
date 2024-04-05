@@ -2,6 +2,8 @@ To Do's
 
 High Fidelity Mock: 
   [https://www.figma.com/proto/5ImMGVfWaUJwSYLU4xscBk/Keepr?scaling=scale-down&page-id=0%3A1&starting-point-node-id=7786%3A144&node-id=7786-144]
+Uml: 
+  [https://www.figma.com/file/0Oh881I5ZW18gOj9DmmRdS/Keepr-%F0%9F%8F%81?type=whiteboard&node-id=0-1&t=Lm7bMzbe0JXijSPw-0]
 
 PLAN: 
 Friday - 8hrs
