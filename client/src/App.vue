@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header class="sticky-top shadow">
     <Navbar />
   </header>
   <main>
@@ -36,5 +36,11 @@ footer {
   display: grid;
   place-content: center;
   height: 32px;
+}
+.bold {
+  font-weight: bold;
+}
+.italic {
+  font-style: italic;
 }
 </style>
