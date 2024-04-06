@@ -1,8 +1,8 @@
 <template>
-  <div class="bg-light">
-    <nav class="navbar navbar-expand-sm navbar-light bg-success bg-opacity-50 px-3 text-center">
+  <div class="bg-info bg-opacity-75">
+    <nav class="navbar navbar-expand-sm navbar-light bg-success bg-opacity-75 px-3 text-center">
       <router-link class="navbar-brand d-flex" :to="{ name: 'Home' }">
-        <div class="border-top border-bottom border-success border-2 bg-success bg-opacity-25 text-dark rounded p-2">
+        <div class="border-top border-bottom border-dark selectable border-2  text-dark rounded p-2">
           <h4 class="italic mb-0">
             The Keepr Co. 
           </h4> 
@@ -14,20 +14,25 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav me-auto">
-          <li>
-            <router-link :to="{ name: 'About' }" class="btn text-dark lighten-30 selectable text-capitalize fs-5">
+          <!-- TODO -->
+          <!-- <li>
+            <router-link :to="{ name: 'About' }" class="btn text-dark lighten-30 selectable text-capitalize fs-5 mx-1">
               About
             </router-link>
-          </li>
+          </li> -->
           <li>
-            <button>
-              <!-- TODO modal form to create keep -->
+            <button type="button" 
+            class="btn text-dark lighten-30 selectable text-capitalize fs-5 mx-1"
+            data-bs-toggle="modal" 
+            data-bs-target="#keepFormModal" 
+            >
+              + Create Keep
             </button>
           </li>
         </ul>
         <!-- LOGIN COMPONENT HERE -->
         <div class="mx-2">
-          <button class="btn text-dark" @click="toggleTheme" :title="theme == 'light' ? 'Enable Dark Mode' : 'Disable Dark Mode'">
+          <button class="btn text-dark selectable fs-5" @click="toggleTheme" :title="theme == 'light' ? 'Enable Dark Mode' : 'Disable Dark Mode'">
             <i class="mdi" :class="theme == 'light' ? 'mdi-weather-sunny' : 'mdi-weather-night'"></i>
           </button>
         </div>

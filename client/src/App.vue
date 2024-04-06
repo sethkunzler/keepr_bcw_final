@@ -6,14 +6,17 @@
     <router-view />
   </main>
    <footer class="bg-dark text-light">
-    Made with 💖 by CodeWorks
+    <Footer />
   </footer>
+  <KeepFormModal />
 </template>
 
 <script>
 import { computed } from 'vue'
 import { AppState } from './AppState'
 import Navbar from './components/Navbar.vue'
+import Footer from './components/Footer.vue'
+import KeepFormModal from './components/KeepFormModal.vue'
 
 export default {
   setup() {
@@ -21,7 +24,7 @@ export default {
       appState: computed(() => AppState)
     }
   },
-  components: { Navbar }
+  components: { Navbar, Footer   }
 }
 </script>
 <style lang="scss">
@@ -35,7 +38,7 @@ export default {
 footer {
   display: grid;
   place-content: center;
-  height: 32px;
+  height: 80px;
 }
 .bold {
   font-weight: bold;

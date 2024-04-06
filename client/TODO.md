@@ -85,7 +85,8 @@ TOTAL HOURS:
 
 12:00 - 12:30 Plan (Through Sunday), and env Setup 
 1:30 - 4:00 BE: Postman: Valid Auth> Keep> Post, GetAll, GetById
-4:00 - 
+4:00 - 5:30 FE: getting keeps,
+8:00 - 
 
 
 18 Requirements
