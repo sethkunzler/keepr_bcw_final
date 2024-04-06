@@ -83,10 +83,14 @@ enjoy te weekend
 Actual - 
 TOTAL HOURS:
 
+Friday 8hrs
 12:00 - 12:30 Plan (Through Sunday), and env Setup 
 1:30 - 4:00 BE: Postman: Valid Auth> Keep> Post, GetAll, GetById
-4:00 - 5:30 FE: getting keeps,
-8:00 - 
+4:00 - 5:30 FE: getting keeps, some styling, Header
+8:00 - 10:30 FE: creating keeps, some styling, some accessibility, Footer
+
+Saturday
+
 
 
 18 Requirements

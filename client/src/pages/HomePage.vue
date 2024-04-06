@@ -5,6 +5,7 @@
         <h1>Browse All Keeps</h1>
       </div>
       <div v-for="keep in keeps" class="col-md-4">
+        <!-- TODO opens Keep Details Modal -->
         <div  class="p-3 m-2 bg-success bg-opacity-25 rounded d-flex justify-content-center align-items-center">
           <img class="img-fluid rounded shadow" :src="keep.img" alt="plant">
         </div>
