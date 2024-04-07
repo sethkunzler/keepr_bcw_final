@@ -6,9 +6,11 @@
       </div>
       <div v-for="keep in keeps" class="col-md-4">
         <!-- TODO opens Keep Details Modal -->
-        <div  class="p-3 m-2 bg-success bg-opacity-25 rounded d-flex justify-content-center align-items-center">
-          <img class="img-fluid rounded shadow" :src="keep.img" alt="plant">
-        </div>
+        <KeepSimpleCard :keep="keep" />
+        <!-- STUB -->
+        <!-- <div  class="p-3 m-2 bg-success bg-opacity-25 rounded d-flex justify-content-center align-items-center">
+          <img class="img-fluid rounded shadow" :src="keep.img" :alt="keep.name">
+        </div> -->
       </div>
     </section>
   </div>
@@ -19,6 +21,7 @@ import { computed, onMounted } from "vue";
 import { AppState } from "../AppState.js";
 import Pop from "../utils/Pop.js";
 import { keepsService } from "../services/KeepsService.js";
+import KeepSimpleCard from "../components/KeepSimpleCard.vue";
 
 export default {
   setup() {

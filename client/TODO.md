@@ -7,10 +7,10 @@ Uml:
 
 PLAN: 
 Friday - 8hrs
-12:00 - 12:30 - setting up auth and env and plan
+12:00 - 12:30 - setting up auth and env and plan ✅
 plan
-1:30 - 4:00 - BE: passing first couple of postman tests Keeps: create and get
-4:00 - 5:00 - FE: getting and creating keeps
+1:30 - 4:00 - BE: passing first couple of postman tests Keeps: create and get ✅
+4:00 - 5:00 - FE: getting and creating keeps  ✅
 
 7:00 - 9:00 - BE: Put and Delete Keeps 
 
@@ -89,8 +89,11 @@ Friday 8hrs
 4:00 - 5:30 FE: getting keeps, some styling, Header
 8:00 - 10:30 FE: creating keeps, some styling, some accessibility, Footer
 
-Saturday
-
+Saturday 
+7:30 - 9:00 - Setting up a display modal
+12:00 -1:00 - getting keep by Id
+4:00 - 5:00 - Setting up an Active Details modal made it components 
+9:00 - 
 
 
 18 Requirements

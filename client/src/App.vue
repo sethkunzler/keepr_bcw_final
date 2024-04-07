@@ -5,10 +5,11 @@
   <main>
     <router-view />
   </main>
-   <footer class="bg-dark text-light">
+  <footer class="bg-dark text-light mt-4">
     <Footer />
   </footer>
   <KeepFormModal />
+  <KeepDetailsModal /> 
 </template>
 
 <script>
@@ -17,6 +18,7 @@ import { AppState } from './AppState'
 import Navbar from './components/Navbar.vue'
 import Footer from './components/Footer.vue'
 import KeepFormModal from './components/KeepFormModal.vue'
+import KeepDetailsModal from './components/KeepDetailsModal.vue'
 
 export default {
   setup() {
@@ -24,7 +26,7 @@ export default {
       appState: computed(() => AppState)
     }
   },
-  components: { Navbar, Footer   }
+  components: { Navbar, Footer, KeepFormModal, KeepDetailsModal }
 }
 </script>
 <style lang="scss">
@@ -38,7 +40,7 @@ export default {
 footer {
   display: grid;
   place-content: center;
-  height: 80px;
+  height: 100px;
 }
 .bold {
   font-weight: bold;

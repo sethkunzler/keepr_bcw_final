@@ -1,5 +1,5 @@
 <template>
-  <p class="mb-0">
+  <p class="mb-0 p-2 bg-dark">
     Made with 💖 by <a href="https://www.linkedin.com/in/seth-kunzler/" target="_blank" class="text-success">Seth Kunzler</a> @ <a href="https://boisecodeworks.com/" target="_blank"><span class="text-info text-underlined-primary"><b>Boise CodeWorks</b></span></a> 
     <br><a class="mdi mdi-github selectable text-success fs-3 mx-2 px-2 rounded" href="https://github.com/sethkunzler" target="_blank" title="GitHub Profile"></a>
     <a class="mdi mdi-linkedin selectable text-success fs-3 mx-2 px-2 rounded" href="https://www.linkedin.com/in/seth-kunzler/" target="_blank" title="Linked In Profile"></a>
