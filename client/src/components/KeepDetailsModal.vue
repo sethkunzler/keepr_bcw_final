@@ -6,12 +6,16 @@
       <div class="modal-content">
         <div v-if="keep.id" class="container">
           <section class="row">
-            <div class="col-md-6">
-              <div class="mt-3"></div>
-              <div class="d-flex justify-content-center align-items-center bg-success p-1  rounded bg-opacity-50">
-                <img class="img-fluid shadow rounded keep-img" :src="keep.img" :alt="keep.name">
+            <div class="col-md-6 d-flex align-self-stretch justify-content-center">
+              <div></div>
+              <div class="flex-grow-1 d-flex flex-column">
+                <div class="mt-3"></div>
+                <div class="flex-grow-1 d-flex justify-content-center align-items-center bg-success p-1 rounded bg-opacity-50">
+                  <img class="img-fluid shadow rounded keep-img" :src="keep.img" :alt="keep.name">
+                </div>
+                <div class="mb-3"></div>
               </div>
-              <div class="mb-3"></div>
+              <div></div>
             </div>
             <!-- ANCHOR -->
             <div class="col-md-6">
@@ -21,8 +25,8 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                <div>
-                  <h3 class="modal-title" id="keepDetailsModalLabel">
+                <div class="p-2">
+                  <h3 class="modal-title text-center my-2" id="keepDetailsModalLabel">
                     {{ keep.name }}
                   </h3>
                   <div>
@@ -31,7 +35,7 @@
                       <label for="floatingTextarea2"> Editable Description</label>
                     </div>
                     <div v-else>
-                      <p>{{ keep.description }}</p>
+                      <p><span class="me-3"></span>{{ keep.description }}</p>
                     </div>
                   </div>
                 </div>
