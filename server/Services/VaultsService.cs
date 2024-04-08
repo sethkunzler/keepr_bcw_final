@@ -1,3 +1,4 @@
+
 namespace keepr_bcw_final.Services;
 
 public class VaultsService
@@ -7,5 +8,11 @@ public class VaultsService
   public VaultsService(VaultsRepository repository)
   {
     _repository = repository;
+  }
+
+  internal Vault CreateVault(Vault vaultData)
+  {
+    Vault vault = _repository.Create(vaultData);
+    return vault;
   }
 }
