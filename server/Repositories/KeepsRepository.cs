@@ -75,7 +75,8 @@ public class KeepsRepository : IRepo<Keep>
 
   public void Destroy(int id)
   {
-    throw new NotImplementedException();
+    string sql = "DELETE FROM keeps WHERE id = @id LIMIT 1;";
+    _db.Execute(sql, new { id });
   }
 
   private Keep _populateCreator(Keep keep, Profile profile)
