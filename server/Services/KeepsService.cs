@@ -22,10 +22,23 @@ public class KeepsService
     return keeps;
   }
 
-  internal Keep GetKeepsById(int keepId)
+  internal Keep GetKeepById(int keepId)
   {
     Keep keep = _repository.GetById(keepId);
     if (keep == null) throw new Exception($"Invalid Id: {keepId}");
+    return keep;
+  }
+
+  internal Keep UpdateKeep(int keepId, Keep keepData, string userId)
+  {
+    Keep keepUpdate = GetKeepById(keepId);
+    
+    if (keepUpdate.CreatorId != userId) throw new Exception("You are not the Creator, access to edit is restricted to the Creator Only");
+    
+    keepUpdate.Name = keepData.Name ?? keepUpdate.Name;
+    keepUpdate.Description = keepData.Description ?? keepUpdate.Description;
+
+    Keep keep = _repository.Update(keepUpdate);  
     return keep;
   }
 }

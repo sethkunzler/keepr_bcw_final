@@ -54,9 +54,23 @@ public class KeepsRepository : IRepo<Keep>
     return keep;
   }
 
-  public Keep Update(Keep data)
+  public Keep Update(Keep keepData)
   {
-    throw new NotImplementedException();
+    string sql = @"
+    UPDATE keeps 
+    Set 
+    name = @name,
+    description = @description
+    WHERE id = @id;
+
+    SELECT
+    keep.*,
+    account.*
+    FROM keeps keep 
+    JOIN accounts account ON account.id = keep.creatorId
+    WHERE keep.id = @id;";
+    Keep keep = _db.Query<Keep, Profile, Keep>(sql, _populateCreator, keepData).FirstOrDefault();
+    return keep;
   }
 
   public void Destroy(int id)

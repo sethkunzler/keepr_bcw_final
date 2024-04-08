@@ -1,5 +1,3 @@
-using Microsoft.AspNetCore.Http.HttpResults;
-
 namespace keepr_bcw_final.Controllers;
 
 [ApiController]
@@ -31,6 +29,7 @@ public class KeepsController : ControllerBase
       return BadRequest(exception.Message);
     }
   }
+
   [HttpGet]
   public ActionResult<List<Keep>> GetKeeps()
   {
@@ -50,7 +49,7 @@ public class KeepsController : ControllerBase
   {
     try
     {
-      Keep keep = _keepsService.GetKeepsById(keepId);
+      Keep keep = _keepsService.GetKeepById(keepId);
       return Ok(keep);
     }
     catch (Exception exception)
@@ -58,4 +57,37 @@ public class KeepsController : ControllerBase
       return BadRequest(exception.Message);
     }
   }
+
+  [HttpPut("{keepId}")]
+  [Authorize]
+  public async Task<ActionResult<Keep>> UpdateKeep(int keepId, [FromBody] Keep keepData)
+  {
+    try
+    {
+      Account userInfo = await _auth0Provider.GetUserInfoAsync<Account>(HttpContext);
+      string userId = userInfo.Id;
+      Keep keep = _keepsService.UpdateKeep(keepId, keepData, userId);
+      return Ok(keep);
+    }
+    catch (Exception exception)
+    {
+      return BadRequest(exception.Message);
+    }
+  }
+
+  // [HttpDelete("{keepId}")]
+  // [Authorize]
+  // public async Task<ActionResult<Keep>> DeleteKeep(int keepId)
+  // {
+  //   // TODO write out the delete request
+  //   try
+  //   {
+  //     return Ok();
+  //   }
+  //   catch (Exception exception)
+  //   {
+  //     return BadRequest(exception.Message);
+  //   }
+  // }
+
 }
