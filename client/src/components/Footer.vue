@@ -7,7 +7,7 @@
     <a class="mdi mdi-book selectable text-success fs-3 mx-2 px-2 rounded disabled" href="" target="_blank" title="Resume"></a>
     <a class="mdi mdi-map-marker selectable text-info fs-3 mx-2 px-2 rounded disabled" href="https://maps.app.goo.gl/iDJ5xRSpiYcWt3Mz7" target="_blank" title="Boise Codeworks' Location"></a>
     <a class="mdi mdi-facebook selectable text-info fs-3 mx-2 px-2 rounded disabled" href="https://www.facebook.com/boisecodeworks/" target="_blank" title="Boise Codeworks' Facebook"></a>
-    <a class="mdi mdi-web selectable text-info fs-3 mx-2 px-2 rounded disabled" href="https://www.facebook.com/boisecodeworks/" target="_blank" title="Boise Codeworks' Home Page"></a>
+    <a class="mdi mdi-web selectable text-info fs-3 mx-2 px-2 rounded disabled" href="https://boisecodeworks.com/" target="_blank" title="Boise Codeworks' Home Page"></a>
   </p>
 </template>
 
