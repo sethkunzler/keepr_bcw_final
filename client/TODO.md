@@ -106,11 +106,11 @@ Monday
   students may miss up to 2 and still be passing.
   🟨 - passing another requirement could cause this to fail - check again before grading
 
-❌Users can Register, login and automatically authenticated on refresh
+✅Users can Register, login and automatically authenticated on refresh
 
-❌Visitors can see all keeps (login not required)
+✅Visitors can see all keeps (login not required)
 
-❌Clicking on a keep card opens the keep in a modal
+✅Clicking on a keep card opens the keep in a modal
 
 ❌Anytime a keeps details are viewed, the keeps view count is incremented
 

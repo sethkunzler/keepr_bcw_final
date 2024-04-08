@@ -21,7 +21,7 @@ class KeepsService {
   }
   async getKeepById(keepId) {
     const res = await api.get(`api/keeps/${keepId}`)
-    logger.log("Found this keep", res.data)
+    // logger.log("Found this keep", res.data)
     const foundKeep = new Keep(res.data)
     return foundKeep
   }
@@ -29,6 +29,16 @@ class KeepsService {
     AppState.activeKeep = {}
     const newKeep = await this.getKeepById(keepId)
     AppState.activeKeep = newKeep
+  }
+
+  async deleteKeep(keepId) {
+    const res = await api.delete(`api/keeps/${keepId}`)
+    logger.log('deleted keep', res.data)
+
+    const keepIndex = AppState.keeps.findIndex(keep => keep.id == keepId)
+    if (keepIndex == -1) throw new Error("Please contact tech support for help. Could not find the correct index. Found keep -1")
+    AppState.keeps.splice(keepIndex, 1)
+    AppState.activeKeep = {}
   }
 }
 

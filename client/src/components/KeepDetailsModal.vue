@@ -25,14 +25,34 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                <div class="p-2">
+                <div>
+                  <div v-if="user.id == keep.creatorId">
+                    <div class="dropdown">
+                      <button role="button" data-bs-toggle="dropdown" aria-expanded="false" class="btn selectable">
+                        <span class="mdi mdi-dots-horizontal fs-4"></span>
+                      </button>
+                      <ul class="dropdown-menu text-start">
+                        <!-- TODO stretch goal only -->
+                        <!-- <li class="no-blue-select"><button type="button" class="dropdown-item" href="#"><span class="mdi mdi-pencil"></span> Edit Description</button></li> -->
+                        <li class="no-blue-select"><button @click="deleteKeep(keep.id)" type="button" class="dropdown-item text-danger mdi mdi-close-circle" title="Click to Delete this Keep"> Delete</button></li>
+                      </ul>
+                    </div>
+                  </div>
                   <h3 class="modal-title text-center my-2" id="keepDetailsModalLabel">
                     {{ keep.name }}
                   </h3>
                   <div>
-                    <div v-if="user.id == keep.creatorId" class="form-floating">
-                      <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 40dvh"></textarea>
-                      <label for="floatingTextarea2"> Editable Description</label>
+                    <div v-if="editing" class="form-floating">
+                      <!-- TODO stretch goal edit description -->
+                      <form>
+                        <div>
+                          <label for="description">Description</label>
+                          <textarea class="form-control" placeholder="Write the description here" id="description" style="height: 40dvh">{{ editableData.description }}</textarea>
+                        </div>
+                        <div class="text-end my-2">
+                          <button class="btn bg-success bg-opacity-50 bold">Save</button>
+                        </div>
+                      </form>
                     </div>
                     <div v-else>
                       <p><span class="me-3"></span>{{ keep.description }}</p>
@@ -61,12 +81,29 @@
 <script>
 import { computed } from "vue";
 import { AppState } from "../AppState.js"
+import Pop from "../utils/Pop.js";
+import { keepsService } from "../services/KeepsService.js";
+import { Modal } from "bootstrap";
 export default {
   setup(){
-    
+    let editing = false;
     return{
+      editing, 
+      // const editableData: ref(() => {description: "this is my description"}),
       keep: computed(() => AppState.activeKeep),
-      user: computed(() => AppState.user)
+      user: computed(() => AppState.user),
+
+      async deleteKeep(keepId) {
+        try {
+          const yes = await Pop.confirm()
+          if (!yes) return
+          await keepsService.deleteKeep(keepId);
+          Modal.getOrCreateInstance('#keepDetailsModal').hide()
+        }
+        catch (error){
+          Pop.error(error);
+        }
+      } 
     }
   }
 }
@@ -81,5 +118,8 @@ export default {
 }
 .keep-img {
   max-height: 80dvh;
+}
+.no-blue-select :active {
+  background-color: rgba(200, 200, 200, .35);
 }
 </style>

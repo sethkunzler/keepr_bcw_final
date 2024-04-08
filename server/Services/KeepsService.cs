@@ -1,6 +1,3 @@
-
-using Microsoft.AspNetCore.Identity;
-
 namespace keepr_bcw_final.Services;
 
 public class KeepsService
@@ -48,7 +45,7 @@ public class KeepsService
   {
     Keep foundKeep = GetKeepById(keepId);
     if (foundKeep.CreatorId != userId) throw new Exception("You are not the Creator of this Keep. Access to delete keeps is restricted to the Creator only");
-    
+
     _repository.Destroy(keepId);
 
     return $"{foundKeep.Name} has been deleted";
