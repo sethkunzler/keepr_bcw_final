@@ -12,19 +12,19 @@ plan
 1:30 - 4:00 - BE: passing first couple of postman tests Keeps: create and get ✅
 4:00 - 5:00 - FE: getting and creating keeps  ✅
 
-7:00 - 9:00 - BE: Put and Delete Keeps 
+7:00 - 9:00 - BE: Put and Delete Keeps ❌
 
 Saturday - 3hrs
-7:00 - 8:30 - FE: put and Delete keeps 
+7:00 - 8:30 - FE: put and Delete keeps ❌
 9 --- Breakfast and travel
 10-12 --- General Conference
 12-1 ---Lunch
 
-1:00 - 2:00 BE: Create Vault
+1:00 - 2:00 BE: Create Vault ❌
 
 2-4 --- General Conference
 
-4:00 - 5:00 - BE: Get Vault
+4:00 - 5:00 - BE: Get Vault ❌
 
 6-7 --- Dinner
 6-8 --- General Conference 
@@ -32,51 +32,52 @@ Saturday - 3hrs
 
 Sunday 4hrs
 
-7:00 - 8:30 - FE: Get Vault 
+7:00 - 8:30 - FE: Get Vault ❌
 9-10 --- Breakfast & heading out
 10-12 --- General Conference
 12-1 ---Lunch 
-1:00 - 2:00 - FE: Create Vault 
+1:00 - 2:00 - FE: Create Vault ❌
 2-4 --- General Conference 
-4:00 - 5:00 BE: Vault Keeps - Post
+4:00 - 5:00 BE: Vault Keeps - Post ❌
 5-6 --- Dinner
 6-8 --- Chilling & going home 
-8:00 - 9:00 - BE: get Vault Keeps
+8:00 - 9:00 - BE: get Vault Keeps ❌
 
-Monday 10hrs
-8:00 - 8:30  revaluate where I am at and create the plan for the rest of the week.
-9:00 - 12:30 {To PLAN}
-1:30 - 5:00 {To PLAN}
-7:00 - 9:00 {To PLAN}
+Monday 9hrs
+7:00 - 7:30  revaluate where I am at and create the plan for the rest of the week.
+9:00 - 12:30 BE: Put and Delete Keeps. FE: Put and Delete Keeps
+1:30 - 5:00 BE: Create and Get Vaults. FE: Getting Vaults
+7:00 - 9:00 FE: Creating Vaults BE: Editing Vaults
 
-Tuesday 10hrs
-8:00 - 12:30 {To PLAN}
-1:30 - 5:00 {To PLAN}
-7:00 - 9:00 {To PLAN}
+Tuesday 9hrs
+9:00 - 12:30 BE: Deleting Vaults; FE: Editing and Deleting Vaults; BE: Post Vault Keeps
+1:30 - 5:00 BE: Get Vault Keeps; FE: Get and create Vault Keeps; BE: Delete Vault Keeps
+7:00 - 9:00 FE: Delete Vault Keeps
 
 Wednesday Morning
-8:00 - 9:00 **FIRST GRADING** After 35 scheduled hours
+9:00 - 9:00 **FIRST GRADING** After 35 scheduled hours
 
-Wednesday 9hrs
-9:00 - 12:30 {To PLAN}
-1:30 - 5:00 {To PLAN}
-7:00 - 9:00 {To PLAN}
+Wednesday 8hrs
+9:00 - 12:30 BE: All Gets by Profile Id, Get vaults by AccountId, 
+1:30 - 5:00 FE: Items display to their proper pages.
+7:00 - 9:00 BE: No-Auth Tests, starting on InvalidAuth Tests
 
 Thursday Morning 4hrs
-8:00 - 12:30 {To PLAN}
+7:00 - 7:30 Revaluate My Plan
+9:00 - 12:30 {To PLAN}
 ** (( Plan to be done by this point ))
 
 Thursday Afternoon 3hrs
 1:30 - 4:00 {To PLAN}
-4:00 - 5:00 **SECOND GRADING** after 51 scheduled hours
+4:00 - 5:00 **SECOND GRADING** after 46 scheduled hours
 
 Thursday Night 2hrs
 7:00 - 9:00 {To PLAN}
 
 Friday 7hrs
-8:00 - 12:30 {To PLAN}
+9:00 - 12:30 {To PLAN}
 1:30 - 4:00 {To PLAN}
-4:00 - 5:00 **LAST GRADING** after 60 scheduled hours
+4:00 - 5:00 **LAST GRADING** after 55 scheduled hours
 
 enjoy te weekend
 
@@ -89,11 +90,15 @@ Friday 8hrs
 4:00 - 5:30 FE: getting keeps, some styling, Header
 8:00 - 10:30 FE: creating keeps, some styling, some accessibility, Footer
 
-Saturday 
+Saturday 3hrs
 7:30 - 9:00 - Setting up a display modal
 12:00 -1:00 - getting keep by Id
 4:00 - 5:00 - Setting up an Active Details modal made it components 
-9:00 - 
+
+Sunday 
+No effective progress made.
+
+Monday 
 
 
 18 Requirements
@@ -111,9 +116,7 @@ Saturday
 
 ❌The Vault Page shows only the keeps in that Vault
 ❌On the Vault Page, users can remove keeps from their vaults
-
 ❌The user should be pushed back to the home page when they attempt to open a Vault Page for a vault they do not have access to
-
 ❌Users can Add keeps to vaults
 ❌Anytime a keep is kept in a vault the kept count is incremented
 
