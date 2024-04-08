@@ -41,7 +41,16 @@ public class VaultsRepository : IRepo<Vault>
 
   public Vault GetById(int id)
   {
-    throw new NotImplementedException();
+    string sql = @"
+    SELECT 
+    vault.*,
+    account.*
+    FROM vaults vault
+    JOIN accounts account ON account.id = vault.creatorId
+    WHERE vault.id = @id;";
+    
+    Vault vault = _db.Query<Vault, Profile, Vault>(sql, _populateCreator, new { id }).FirstOrDefault();
+    return vault;
   }
 
   public Vault Update(Vault data)

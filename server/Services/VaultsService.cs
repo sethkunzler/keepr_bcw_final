@@ -1,4 +1,5 @@
 
+
 namespace keepr_bcw_final.Services;
 
 public class VaultsService
@@ -13,6 +14,20 @@ public class VaultsService
   internal Vault CreateVault(Vault vaultData)
   {
     Vault vault = _repository.Create(vaultData);
+    return vault;
+  }
+
+  internal Vault GetVaultById(int vaultId, string userId)
+  {
+    Vault vault = _repository.GetById(vaultId);
+
+    if (vault == null) throw new Exception($"Invalid id: {vaultId}");
+
+    if (vault.isPrivate == true && userId != vault.CreatorId)
+    {
+      throw new Exception($"Invalid Vault ID: {vaultId} 😉🤚❌ This Vault is Private! Access to view is restricted to the creator.");
+    }
+
     return vault;
   }
 }
