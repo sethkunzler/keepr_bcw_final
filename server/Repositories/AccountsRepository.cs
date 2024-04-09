@@ -20,6 +20,11 @@ public class AccountsRepository
     string sql = "SELECT * FROM accounts WHERE id = @id";
     return _db.QueryFirstOrDefault<Account>(sql, new { id });
   }
+  internal Profile GetProfileById(string id)
+  {
+    string sql = "SELECT * FROM accounts WHERE id = @id";
+    return _db.QueryFirstOrDefault<Profile>(sql, new { id });
+  }
 
   internal Account Create(Account newAccount)
   {
@@ -38,7 +43,8 @@ public class AccountsRepository
             UPDATE accounts
             SET 
               name = @Name,
-              picture = @Picture
+              picture = @Picture,
+              coverImg = @CoverImg
             WHERE id = @Id;";
     _db.Execute(sql, update);
     return update;

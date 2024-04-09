@@ -65,12 +65,46 @@
                   <div>
 
                   </div>
-                  <span class="me-3">{{ keep.creator.name }}</span>
-                  <img class="creator-profile-picture border border-success border-2" :src="keep.creator.picture" :alt="keep.creator.name">
+                  <router-link :to="{ name: 'Profile', params: { profileId: keep.creatorId} }" >
+                    <div role="button" @click="dismissModal()">
+                      <span class="me-1 text-success px-2">{{ keep.creator.name }}</span>
+                      <img class="creator-profile-picture border border-success border-2" :src="keep.creator.picture" :alt="keep.creator.name">
+                    </div>
+                  </router-link>
                 </div>
               </div>
             </div>
           </section>
+        </div>
+        <div v-else class="container">
+          <div class="row placeholder-glow">
+            <div class="col-md-6 d-flex align-self-stretch justify-content-center">
+              <div></div>
+              <div class="flex-grow-1 d-flex flex-column">
+                <div class="mt-3"></div>
+                <div class="flex-grow-1 d-flex justify-content-center align-items-center bg-success p-1 rounded bg-opacity-50">
+                  <div class="img-filler-lg placeholder"></div>
+                </div>
+                <div class="mb-3"></div>
+              </div>
+              <div></div>
+            </div>
+            <div class="col-md-6">
+              <div class="modal-header">
+                <div class="d-flex align-items-center">
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="title-filler placeholder"></div>
+                <div class="paragraph-filler placeholder"></div>
+                <div class="paragraph-filler placeholder"></div>
+              </div>
+              <div class="modal-footer">
+                <div class="info-filler"></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -103,6 +137,9 @@ export default {
         catch (error){
           Pop.error(error);
         }
+      },
+      async dismissModal() {
+        Modal.getOrCreateInstance('#keepDetailsModal').hide()
       } 
     }
   }

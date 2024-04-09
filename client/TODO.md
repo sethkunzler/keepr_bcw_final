@@ -12,10 +12,10 @@ plan
 1:30 - 4:00 - BE: passing first couple of postman tests Keeps: create and get ✅
 4:00 - 5:00 - FE: getting and creating keeps  ✅
 
-7:00 - 9:00 - BE: Put and Delete Keeps ❌
+7:00 - 9:00 - BE: Put and Delete Keeps ✅
 
 Saturday - 3hrs
-7:00 - 8:30 - FE: put and Delete keeps ❌
+7:00 - 8:30 - FE: put and Delete keeps ✅
 9 --- Breakfast and travel
 10-12 --- General Conference
 12-1 ---Lunch
@@ -45,7 +45,7 @@ Sunday 4hrs
 
 Monday 9hrs
 7:00 - 7:30  revaluate where I am at and create the plan for the rest of the week.
-9:00 - 12:30 BE: Put and Delete Keeps. FE: Put and Delete Keeps
+9:00 - 12:30 BE: Put and Delete Keeps. FE: Put and Delete Keeps ✅
 1:30 - 5:00 BE: Create and Get Vaults. FE: Getting Vaults
 7:00 - 9:00 FE: Creating Vaults BE: Editing Vaults
 
@@ -103,6 +103,9 @@ Monday
 9:00 - 12:30 BE: Put and Delete Keeps. FE: Put Keeps
 1:30 - 5:00 FE: Delete Keeps; BE: Create; 
 7:00 - 9:00 BE: Get Vault By Id, Get Vaults by Profile; FE: Profile Page Setup
+
+Tuesday
+9:00 - 12:00 
 
 18 Requirements
 ✅🟨❌
