@@ -1,5 +1,6 @@
 
 
+
 namespace keepr_bcw_final.Services;
 
 public class VaultsService
@@ -17,6 +18,15 @@ public class VaultsService
     return vault;
   }
 
+  internal List<Vault> GetVaultsByProfileId(string userId, string profileId)
+  {
+    List<Vault> vaults = _repository.GetAllVaultsByProfileId(profileId);
+
+    vaults = vaults.FindAll(vault => vault.isPrivate == false || vault.CreatorId == userId);
+
+    return vaults;
+  }
+
   internal Vault GetVaultById(int vaultId, string userId)
   {
     Vault vault = _repository.GetById(vaultId);
@@ -30,4 +40,6 @@ public class VaultsService
 
     return vault;
   }
+
+  
 }

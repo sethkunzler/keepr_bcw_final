@@ -1,6 +1,3 @@
-
-using System.Runtime.CompilerServices;
-
 namespace keepr_bcw_final.Repositories;
 
 public class VaultsRepository : IRepo<Vault>
@@ -38,6 +35,30 @@ public class VaultsRepository : IRepo<Vault>
   {
     throw new NotImplementedException();
   }
+  public List<Vault> GetAllVaultsByProfileId(string profileId)
+  {
+    // FIXME - after keepsCount on Vault is set up
+    // string sql = @"
+    // SELECT
+    // vault.*,
+    // COUNT(keep.id) AS keepCount,
+    // account.*
+    // LEFT JOIN keeps keep ON keep.vaultId = vault.id
+    // FROM vaults vault 
+    // JOIN accounts account ON vault.creatorId = account.id
+    // GROUP BY (vault.id);"
+
+    string sql = @"
+    SELECT
+    vault.*,
+    account.*
+    FROM vaults vault 
+    JOIN accounts account ON vault.creatorId = account.id
+    WHERE vault.creatorId = @profileId;";
+
+    List<Vault> vaults = _db.Query<Vault, Profile, Vault>(sql, _populateCreator, new {profileId}).ToList();
+    return vaults;
+  }
 
   public Vault GetById(int id)
   {
@@ -48,7 +69,7 @@ public class VaultsRepository : IRepo<Vault>
     FROM vaults vault
     JOIN accounts account ON account.id = vault.creatorId
     WHERE vault.id = @id;";
-    
+
     Vault vault = _db.Query<Vault, Profile, Vault>(sql, _populateCreator, new { id }).FirstOrDefault();
     return vault;
   }

@@ -99,7 +99,10 @@ Sunday
 No effective progress made.
 
 Monday 
-
+7:00 - 7:30  Plan through Wednesday.
+9:00 - 12:30 BE: Put and Delete Keeps. FE: Put Keeps
+1:30 - 5:00 FE: Delete Keeps; BE: Create and Get Vaults; 
+7:00 - 9:00
 
 18 Requirements
 ✅🟨❌
