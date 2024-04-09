@@ -1,6 +1,14 @@
 <template>
   <div v-if="vault">
-    <h1>This is the {{ vault.name }} Vault Page</h1>
+    <div class="text-center">
+      <img class="img-fluid" :src="vault.img" :alt="vault.name">
+    </div>
+    <div class="p-2">
+      <h1 class="text-center">This is the {{ vault.name }} Vault Page</h1>
+      <div v-if="account.id == vault.creatorId" class="text-end">
+        <button  @click="deleteVault(vault.id)" class="btn btn-danger">DELETE THE VAULT</button>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -28,7 +36,22 @@ setup(){
     setActiveVault(); 
   })
   return{
-    vault: computed(() => AppState.activeVault)
+    vault: computed(() => AppState.activeVault),
+    account: computed(() => AppState.account),
+
+    async deleteVault(vaultId) {
+      try {
+        const yes = await Pop.confirm()
+        if (!yes) return
+        const positive = await Pop.confirm("Are you actually Sure THOuGh? This could be gone fOREevEr!")
+        if(!positive) return
+        // TODO I just remembered that I need to write the backend before I can write this out
+        // await vaultsService.deleteVault(vaultId)
+      }
+      catch (error){
+        Pop.error(error);
+      }
+    }
   }
 }
 }

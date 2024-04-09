@@ -99,13 +99,14 @@ Sunday
 No effective progress made.
 
 Monday 
-7:00 - 7:30  Plan through Wednesday.
-9:00 - 12:30 BE: Put and Delete Keeps. FE: Put Keeps
-1:30 - 5:00 FE: Delete Keeps; BE: Create; 
-7:00 - 9:00 BE: Get Vault By Id, Get Vaults by Profile; FE: Profile Page Setup
+7:00 - 7:30 - Plan through Wednesday.
+9:00 - 12:30 - BE: Put and Delete Keeps. FE: Put Keeps
+1:30 - 5:00 - FE: Delete Keeps; BE: Create; 
+7:00 - 9:00 - BE: Get Vault By Id, Get Vaults by Profile; FE: Profile Page Setup
 
 Tuesday
-9:00 - 12:00 
+9:00 - 12:00 - Fe: Getting Profile,  getting vaults by profile, 
+1:00 - 5:00 - FE: Vaults Page Setup
 
 18 Requirements
 ✅🟨❌
