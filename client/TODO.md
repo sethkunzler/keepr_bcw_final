@@ -101,8 +101,8 @@ No effective progress made.
 Monday 
 7:00 - 7:30  Plan through Wednesday.
 9:00 - 12:30 BE: Put and Delete Keeps. FE: Put Keeps
-1:30 - 5:00 FE: Delete Keeps; BE: Create and Get Vaults; 
-7:00 - 9:00
+1:30 - 5:00 FE: Delete Keeps; BE: Create; 
+7:00 - 9:00 BE: Get Vault By Id, Get Vaults by Profile; FE: Profile Page Setup
 
 18 Requirements
 ✅🟨❌
@@ -112,9 +112,7 @@ Monday
 ✅Users can Register, login and automatically authenticated on refresh
 
 ✅Visitors can see all keeps (login not required)
-
 ✅Clicking on a keep card opens the keep in a modal
-
 ❌Anytime a keeps details are viewed, the keeps view count is incremented
 
 ❌The Vault Page shows only the keeps in that Vault
