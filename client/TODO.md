@@ -107,6 +107,10 @@ Monday
 Tuesday
 9:00 - 12:00 - Fe: Getting Profile,  getting vaults by profile, 
 1:00 - 5:00 - FE: Vaults Page Setup
+7:30 - 9:30 - BE: Delete and Put Vaults, FE: Delete and Create Vaults
+
+Wednesday
+
 
 18 Requirements
 ✅🟨❌
@@ -127,9 +131,9 @@ Tuesday
 
 ❌All users have a public profile page
 
-❌The logged-in user can Create and Delete Keeps
+✅The logged-in user can Create and Delete Keeps
 
-❌The logged-in user can Create and Delete Vaults
+✅The logged-in user can Create and Delete Vaults
 
 ❌The logged-in user can edit their account
 

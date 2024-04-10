@@ -29,6 +29,15 @@
               + Create Keep
             </button>
           </li>
+          <li>
+            <button type="button" 
+            class="btn text-dark lighten-30 selectable text-capitalize fs-5 mx-1"
+            data-bs-toggle="modal" 
+            data-bs-target="#vaultFormModal" 
+            >
+              + Create Vault
+            </button>
+          </li>
         </ul>
         <!-- LOGIN COMPONENT HERE -->
         <div class="mx-2">

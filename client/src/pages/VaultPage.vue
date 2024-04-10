@@ -15,7 +15,7 @@
 
 <script>
 import { computed, onMounted } from "vue";
-import { useRoute } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
 import { AppState } from "../AppState.js";
 import { vaultsService } from "../services/VaultsService.js";
 import Pop from "../utils/Pop.js";
@@ -23,6 +23,7 @@ import Pop from "../utils/Pop.js";
 export default {
 setup(){
   const route = useRoute();
+  const router = useRouter();
   async function setActiveVault() {
     try {
       const vaultId = route.params.vaultId;
@@ -30,6 +31,9 @@ setup(){
     }
     catch (error){
       Pop.error(error);
+      if (error.response.data.includes('😉🤚❌')){
+        router.push({ name: 'Home' })
+      }
     }
   } 
   onMounted(() => {
@@ -45,8 +49,8 @@ setup(){
         if (!yes) return
         const positive = await Pop.confirm("Are you actually Sure THOuGh? This could be gone fOREevEr!")
         if(!positive) return
-        // TODO I just remembered that I need to write the backend before I can write this out
-        // await vaultsService.deleteVault(vaultId)
+        await vaultsService.deleteVault(vaultId)
+        router.push({ name: 'Home' })
       }
       catch (error){
         Pop.error(error);

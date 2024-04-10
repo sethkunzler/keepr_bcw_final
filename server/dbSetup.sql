@@ -33,7 +33,7 @@ CREATE TABLE vaults(
   name VARCHAR(255) NOT  NULL,
   description VARCHAR(1000) NOT NULL,
   img VARCHAR(1000) NOT NULL,
-  isPrivate BOOLEAN NOT NULL,
+  isPrivate BOOLEAN NOT NULL DEFAULT false COMMENT 'Private or Public Condition',
   creatorId VARCHAR(255) NOT NULL,
   FOREIGN KEY (creatorId) REFERENCES accounts (id) ON DELETE CASCADE
   -- Creator Profile is a Virtual

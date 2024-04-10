@@ -9,6 +9,7 @@
     <Footer />
   </footer>
   <KeepFormModal />
+  <VaultFormModal />
   <KeepDetailsModal /> 
 </template>
 

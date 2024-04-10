@@ -1,6 +1,3 @@
-using System.Runtime.CompilerServices;
-using Microsoft.AspNetCore.Http.HttpResults;
-
 namespace keepr_bcw_final.Controllers;
 
 [ApiController]
