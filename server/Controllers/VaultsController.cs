@@ -47,6 +47,21 @@ public class VaultsController : ControllerBase
     }
   }
 
+  [HttpGet("{vaultId}/keeps")]
+  public async Task<ActionResult<List<KeptKeep>>> GetKeepsByVaultId(int vaultId)
+  {
+    try
+    {
+      Account userInfo = await _auth0Provider.GetUserInfoAsync<Account>(HttpContext);
+      List<KeptKeep> keeps = _keepsService.GetKeepsByVaultId(vaultId, userInfo?.Id);
+      return Ok(keeps);
+    }
+    catch (Exception exception)
+    {
+      return BadRequest(exception.Message);
+    }
+  }
+
   [HttpPut("{vaultId}")]
   [Authorize]
   public async Task<ActionResult<Vault>> UpdateVault(int vaultId, [FromBody] Vault vaultData) {
@@ -78,22 +93,5 @@ public class VaultsController : ControllerBase
       return BadRequest(exception.Message);
     }
   }
-
-
-  [HttpGet("{vaultId}/keeps")]
-  public async Task<ActionResult<List<KeptKeep>>> GetKeepsByVaultId(int vaultId)
-  {
-    try
-    {
-      Account userInfo = await _auth0Provider.GetUserInfoAsync<Account>(HttpContext);
-      List<KeptKeep> keeps = _keepsService.GetKeepsByVaultId(vaultId, userInfo?.Id);
-      return Ok(keeps);
-    }
-    catch (Exception exception)
-    {
-      return BadRequest(exception.Message);
-    }
-  }
-  
 
 }

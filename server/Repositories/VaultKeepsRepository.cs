@@ -16,7 +16,6 @@ public class VaultKeepsRepository : IRepo<VaultKeep>
   }
   public KeptKeep CreateKeptKeep(VaultKeep vaultKeepData)
   {
-    // REVIEW 🤨 I don't know about this...
     string sql = @"
     INSERT INTO 
     vaultKeeps(creatorId, vaultId, keepId)
@@ -44,9 +43,10 @@ public class VaultKeepsRepository : IRepo<VaultKeep>
     return keptKeep;
   }
 
-  public void Destroy(int id)
+  public void Destroy(int vaultKeepId)
   {
-    throw new NotImplementedException();
+    string sql = "DELETE FROM vaultKeeps WHERE id = @vaultKeepId;";
+    _db.Execute(sql, new {vaultKeepId});
   }
 
   public List<VaultKeep> GetAll()
@@ -57,6 +57,31 @@ public class VaultKeepsRepository : IRepo<VaultKeep>
   public VaultKeep GetById(int id)
   {
     throw new NotImplementedException();
+  }
+
+  internal KeptKeep GetKeptKeepById(int vaultKeepId)
+  {
+    string sql = @"
+    SELECT 
+    vaultKeep.*,
+    keep.*,
+    account.*
+    FROM vaultKeeps vaultKeep
+    JOIN keeps keep ON keep.id = vaultKeep.keepId
+    JOIN accounts account ON account.id = keep.creatorId
+    WHERE vaultKeep.id = @vaultKeepId;";
+    KeptKeep keptKeep = _db.Query<VaultKeep, KeptKeep, Account, KeptKeep>(sql, (vaultKeep, keep, account) => 
+    {
+      keep.KeepId = vaultKeep.KeepId;
+      keep.VaultKeepId = vaultKeep.Id;
+      keep.VaultId = vaultKeep.VaultId;
+      keep.CreatorId = vaultKeep.CreatorId;
+      keep.Creator = account;
+      // keep.
+      return keep;
+    }, new {vaultKeepId}).FirstOrDefault();
+
+    return keptKeep;
   }
 
   public VaultKeep Update(VaultKeep data)
