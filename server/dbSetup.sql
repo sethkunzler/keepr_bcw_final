@@ -33,8 +33,22 @@ CREATE TABLE vaults(
   name VARCHAR(255) NOT  NULL,
   description VARCHAR(1000) NOT NULL,
   img VARCHAR(1000) NOT NULL,
-  isPrivate BOOLEAN NOT NULL DEFAULT false COMMENT 'Private or Public Condition',
+  isPrivate BOOLEAN NOT NULL COMMENT 'Private or Public Condition',
   creatorId VARCHAR(255) NOT NULL,
-  FOREIGN KEY (creatorId) REFERENCES accounts (id) ON DELETE CASCADE
+  FOREIGN KEY (creatorId) REFERENCES accounts (id) ON DELETE CASCADE,
   -- Creator Profile is a Virtual
+  UNIQUE (name, creatorId)
+);
+
+CREATE TABLE vaultKeeps(
+  id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  createdAt DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT 'Time Created',
+  updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Last Update',
+  keepId INT NOT NULL,
+  vaultId INT NOT NULL,
+  creatorId VARCHAR(255) NOT NULL, 
+  FOREIGN KEY (creatorId) REFERENCES accounts (id) ON DELETE CASCADE,
+  FOREIGN KEY (vaultId) REFERENCES vaults (id) ON DELETE CASCADE,
+  FOREIGN KEY (keepId) REFERENCES keeps (id) ON DELETE CASCADE,
+  UNIQUE (keepId, vaultId)
 );

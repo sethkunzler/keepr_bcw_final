@@ -19,40 +19,36 @@ Saturday - 3hrs
 9 --- Breakfast and travel
 10-12 --- General Conference
 12-1 ---Lunch
-
-1:00 - 2:00 BE: Create Vault ❌
-
+1:00 - 2:00 BE: Create Vault ✅
 2-4 --- General Conference
-
-4:00 - 5:00 - BE: Get Vault ❌
-
+4:00 - 5:00 - BE: Get Vault ✅
 6-7 --- Dinner
 6-8 --- General Conference 
 8-9 --- Chilling & going home
 
 Sunday 4hrs
-
-7:00 - 8:30 - FE: Get Vault ❌
+7:00 - 8:30 - FE: Get Vault ✅
 9-10 --- Breakfast & heading out
 10-12 --- General Conference
 12-1 ---Lunch 
-1:00 - 2:00 - FE: Create Vault ❌
+1:00 - 2:00 - FE: Create Vault 🟨 (is Private defaults false)
 2-4 --- General Conference 
 4:00 - 5:00 BE: Vault Keeps - Post ❌
 5-6 --- Dinner
 6-8 --- Chilling & going home 
 8:00 - 9:00 - BE: get Vault Keeps ❌
 
+
 Monday 9hrs
-7:00 - 7:30  revaluate where I am at and create the plan for the rest of the week.
+*** 7:00 - 7:30  revaluate where I am at and create the plan for the rest of the week.
 9:00 - 12:30 BE: Put and Delete Keeps. FE: Put and Delete Keeps ✅
-1:30 - 5:00 BE: Create and Get Vaults. FE: Getting Vaults
-7:00 - 9:00 FE: Creating Vaults BE: Editing Vaults
+1:30 - 5:00 BE: Create and Get Vaults. FE: Getting Vaults ✅
+7:00 - 9:00 FE: Creating Vaults BE: Editing Vaults ✅
 
 Tuesday 9hrs
-9:00 - 12:30 BE: Deleting Vaults; FE: Editing and Deleting Vaults; BE: Post Vault Keeps
-1:30 - 5:00 BE: Get Vault Keeps; FE: Get and create Vault Keeps; BE: Delete Vault Keeps
-7:00 - 9:00 FE: Delete Vault Keeps
+9:00 - 12:30 BE: Deleting Vaults; FE: Editing and Deleting Vaults; BE: Post Vault Keeps ❌
+1:30 - 5:00 BE: Get Vault Keeps; FE: Get and create Vault Keeps; BE: Delete Vault Keeps ❌
+7:00 - 9:00 FE: Delete Vault Keeps ❌
 
 Wednesday Morning
 9:00 - 9:00 **FIRST GRADING** After 35 scheduled hours
@@ -110,6 +106,7 @@ Tuesday
 7:30 - 9:30 - BE: Delete and Put Vaults, FE: Delete and Create Vaults
 
 Wednesday
+9:00 - 12:00
 
 
 18 Requirements
