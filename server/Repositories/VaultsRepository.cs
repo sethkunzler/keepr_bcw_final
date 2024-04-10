@@ -26,10 +26,7 @@ public class VaultsRepository : IRepo<Vault>
     return vault;
   }
 
-    public void Destroy(int id)
-  {
-    throw new NotImplementedException();
-  }
+  
 
   public List<Vault> GetAll()
   {
@@ -94,9 +91,15 @@ public class VaultsRepository : IRepo<Vault>
     return vault;
   }
 
+  public void Destroy(int id)
+  {
+    string sql = "DELETE FROM vaults WHERE id = @id LIMIT 1;";
+    _db.Execute(sql, new {id});
+  }
+
   private Vault _populateCreator(Vault vault, Profile profile)
-    {
-      vault.Creator = profile;
-      return vault;
-    }
+  {
+    vault.Creator = profile;
+    return vault;
+  }
 }

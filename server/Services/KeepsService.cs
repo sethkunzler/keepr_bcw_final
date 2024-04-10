@@ -44,7 +44,7 @@ public class KeepsService
   internal string DeleteKeep(int keepId, string userId)
   {
     Keep foundKeep = GetKeepById(keepId);
-    if (foundKeep.CreatorId != userId) throw new Exception("You are not the Creator of this Keep. Access to delete keeps is restricted to the Creator only");
+    if (foundKeep.CreatorId != userId) throw new Exception("You are not the Creator of this Keep. Access to delete is restricted to the Creator only");
 
     _repository.Destroy(keepId);
 

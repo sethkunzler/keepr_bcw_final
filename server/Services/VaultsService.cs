@@ -53,4 +53,14 @@ public class VaultsService
     Vault vault = _repository.Update(updateVault);
     return vault;
   }
+
+  internal string DeleteVault(int vaultId, string userId)
+  {
+    Vault foundVault = GetVaultById(vaultId, userId);
+    if (foundVault.CreatorId != userId) throw new Exception("You are not the Creator of this Vault. Access to delete is restricted to the Creator only");
+
+    _repository.Destroy(vaultId);
+
+    return $"{foundVault.Name} has been deleted";
+  }
 }
