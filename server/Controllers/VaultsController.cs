@@ -76,4 +76,10 @@ public class VaultsController : ControllerBase
       return BadRequest(exception.Message);
     }
   }
+
+
+  // TODO get keeps in vault
+
+  
+
 }

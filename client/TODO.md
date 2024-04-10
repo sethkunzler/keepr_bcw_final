@@ -106,7 +106,9 @@ Tuesday
 7:30 - 9:30 - BE: Delete and Put Vaults, FE: Delete and Create Vaults
 
 Wednesday
-9:00 - 12:00
+9:00 - 12:00 - BE: KeepVaults and KeptKeep setup;
+12:00 - 12:30 - **First Grading**
+1:30 - 5:00
 
 
 18 Requirements
