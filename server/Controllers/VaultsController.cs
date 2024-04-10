@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Http.HttpResults;
+
 namespace keepr_bcw_final.Controllers;
 
 [ApiController]
@@ -44,4 +46,21 @@ public class VaultsController : ControllerBase
       return BadRequest(exception.Message);
     }
   }
+
+  [HttpPut("{vaultId}")]
+  [Authorize]
+  public async Task<ActionResult<Vault>> UpdateVault(int vaultId, [FromBody] Vault vaultData) {
+    try
+    {
+      Account userInfo = await _auth0Provider.GetUserInfoAsync<Account>(HttpContext);
+      string userId = userInfo.Id;
+      Vault updatedVault = _vaultsService.UpdateVault(vaultId, vaultData, userId); 
+      return Ok(updatedVault);
+    }
+    catch (Exception exception)
+    {
+      return BadRequest(exception.Message);
+    }
+  }
+  // [HttpDelete]
 }

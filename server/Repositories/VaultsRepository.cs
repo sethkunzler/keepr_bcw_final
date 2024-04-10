@@ -74,9 +74,24 @@ public class VaultsRepository : IRepo<Vault>
     return vault;
   }
 
-  public Vault Update(Vault data)
+  public Vault Update(Vault vaultData)
   {
-    throw new NotImplementedException();
+    string sql = @"
+    UPDATE vaults
+    SET
+    name = @name,
+    description = @description, 
+    isPrivate = @isPrivate
+    WHERE id = @id;
+
+    SELECT 
+    vault.*,
+    account.*
+    FROM vaults vault
+    JOIN accounts account ON account.id = vault.creatorId
+    WHERE vault.id = @id;";
+    Vault vault = _db.Query<Vault, Profile, Vault>(sql, _populateCreator, vaultData).FirstOrDefault();
+    return vault;
   }
 
   private Vault _populateCreator(Vault vault, Profile profile)

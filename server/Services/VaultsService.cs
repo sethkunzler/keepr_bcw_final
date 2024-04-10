@@ -41,5 +41,16 @@ public class VaultsService
     return vault;
   }
 
-  
+  internal Vault UpdateVault(int vaultId, Vault vaultData, string userId)
+  {
+    Vault updateVault = GetVaultById(vaultId, userId);
+    if (updateVault.CreatorId != userId) throw new Exception("You are not the Creator of this Vault! access too edit is restricted to the Creator only");
+
+    updateVault.Name = vaultData.Name ?? updateVault.Name;
+    updateVault.Description = vaultData.Description ?? updateVault.Description;
+    updateVault.isPrivate = vaultData.isPrivate ?? updateVault.isPrivate;
+
+    Vault vault = _repository.Update(updateVault);
+    return vault;
+  }
 }
