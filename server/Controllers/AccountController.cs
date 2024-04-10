@@ -27,4 +27,12 @@ public class AccountController : ControllerBase
       return BadRequest(e.Message);
     }
   }
+
+
+  // TODO edit account
+  // TODO get account keeps
+  // TODO get account vaults
+
+
+
 }

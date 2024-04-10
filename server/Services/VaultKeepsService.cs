@@ -13,6 +13,8 @@ public class VaultKeepsService
 
   internal KeptKeep CreateVaultKeep(VaultKeep vaultKeepData)
   {
+    // TODO ensure the vault belongs to the logged in user
+
     KeptKeep vaultKeep = _repository.CreateKeptKeep(vaultKeepData);
     return vaultKeep;
   }

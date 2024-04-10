@@ -24,14 +24,21 @@ public class VaultKeepsRepository : IRepo<VaultKeep>
 
     SELECT 
     vaultKeep.*,
+    keep.*,
     account.*
     FROM vaultKeeps vaultKeep
-    JOIN accounts account ON account.id = vaultKeep.creatorId
+    JOIN keeps keep ON keep.id = vaultKeep.keepId
+    JOIN accounts account ON account.id = keep.creatorId
     WHERE vaultKeep.id = LAST_INSERT_ID();";
-    KeptKeep keptKeep = _db.Query<VaultKeep, KeptKeep, KeptKeep>(sql, (vaultKeep, keep) => 
+    KeptKeep keptKeep = _db.Query<VaultKeep, KeptKeep, Account, KeptKeep>(sql, (vaultKeep, keep, account) => 
     {
+      keep.Id = vaultKeep.Id;
+      keep.KeepId = vaultKeep.KeepId;
       keep.VaultKeepId = vaultKeep.Id;
+      keep.VaultId = vaultKeep.VaultId;
       keep.CreatorId = vaultKeep.CreatorId;
+      keep.Creator = account;
+      // keep.
       return keep;
     }, vaultKeepData).FirstOrDefault();
     return keptKeep;
