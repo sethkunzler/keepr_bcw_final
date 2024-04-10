@@ -137,8 +137,8 @@ Wednesday
 ❌The logged-in user can edit their account
 
 Postman:
-❌All No Auth API Tests pass
-❌All Valid Auth API Tests pass
+✅All No Auth API Tests pass
+✅All Valid Auth API Tests pass
 ❌All Invalid Auth API Tests pass
   --🟨passing the invalid tests may cause the Valid Auth or No auth tests to fail
 
