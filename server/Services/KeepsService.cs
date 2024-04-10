@@ -38,6 +38,12 @@ public class KeepsService
     return keeps;
   }
 
+  internal List<Keep> GetKeepsByProfileId( string profileId)
+  {
+    List<Keep> keeps = _repository.GetAllKeepsByProfileId(profileId);
+    return keeps;
+  }
+
   internal Keep UpdateKeep(int keepId, Keep keepData, string userId)
   {
     Keep keepUpdate = GetKeepById(keepId);

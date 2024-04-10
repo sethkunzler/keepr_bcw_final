@@ -1,3 +1,4 @@
+
 namespace keepr_bcw_final.Repositories;
 
 public class KeepsRepository : IRepo<Keep>
@@ -79,6 +80,20 @@ public class KeepsRepository : IRepo<Keep>
     return keeps;
   }
 
+  internal List<Keep> GetAllKeepsByProfileId(string profileId)
+  {
+    string sql = @" 
+    SELECT
+    keep.*,
+    account.*
+    FROM keeps keep
+    JOIN accounts account ON keep.creatorId = account.id
+    WHERE keep.creatorId = @profileId;";
+
+    List<Keep> keeps = _db.Query<Keep, Profile, Keep>(sql, _populateCreator, new {profileId}).ToList();
+    return keeps;
+  }
+
   public Keep Update(Keep keepData)
   {
     string sql = @"
@@ -109,4 +124,5 @@ public class KeepsRepository : IRepo<Keep>
     keep.Creator = profile;
     return keep;
   }
+
 }

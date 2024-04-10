@@ -124,11 +124,11 @@ Wednesday
 
 ❌The Vault Page shows only the keeps in that Vault
 ❌On the Vault Page, users can remove keeps from their vaults
-❌The user should be pushed back to the home page when they attempt to open a Vault Page for a vault they do not have access to
+✅The user should be pushed back to the home page when they attempt to open a Vault Page for a vault they do not have access to
 ❌Users can Add keeps to vaults
 ❌Anytime a keep is kept in a vault the kept count is incremented
 
-❌All users have a public profile page
+✅All users have a public profile page
 
 ✅The logged-in user can Create and Delete Keeps
 
