@@ -121,12 +121,17 @@ Wednesday
 ✅Visitors can see all keeps (login not required)
 ✅Clicking on a keep card opens the keep in a modal
 ❌Anytime a keeps details are viewed, the keeps view count is incremented
+  -TODO BE: Postman- stretch goals, FE: get request
 
 ❌The Vault Page shows only the keeps in that Vault
-❌On the Vault Page, users can remove keeps from their vaults
+  -TODO - FE: get keeps, v-for keeps
+  ❌On the Vault Page, users can remove keeps from their vaults
+  -TODO - @Click
 ✅The user should be pushed back to the home page when they attempt to open a Vault Page for a vault they do not have access to
 ❌Users can Add keeps to vaults
-❌Anytime a keep is kept in a vault the kept count is incremented
+  -TODO - FE: Form -multiSelect
+  ❌Anytime a keep is kept in a vault the kept count is incremented
+  -TODO - BE: Postman - Strech Goals, Form
 
 ✅All users have a public profile page
 
@@ -135,17 +140,38 @@ Wednesday
 ✅The logged-in user can Create and Delete Vaults
 
 ❌The logged-in user can edit their account
+  BE: Postman - Stretch Goals, FE: Form
 
 Postman:
 ✅All No Auth API Tests pass
 ✅All Valid Auth API Tests pass
-❌All Invalid Auth API Tests pass
+✅All Invalid Auth API Tests pass
   --🟨passing the invalid tests may cause the Valid Auth or No auth tests to fail
 
 ❌🟨The UI Meets mock requirements
   [https://www.figma.com/file/5ImMGVfWaUJwSYLU4xscBk/Keepr?type=design&node-id=0-1&mode=design&t=yrCS9uwidiqCLdDd-0]
+  -Home Page Mobile: Keep cards following masonry layout with two 'columns' per 'row'.
+  -Home Page: keep cards are displayed using a masonry layout.
+    -Keep Card: keep's title and creator's picture displays on top of picture. Clicking on a card should open up a modal displaying the keep details.
+    -Keep Card: Creator's picture should have a title tag displaying the creator's name.
+  -Vault Page: Displays total amount of keeps in vault (vaultkeeps) and vault cover image. 
+  -Vault Page: Display name of vault and creator name (and description)
+  -Profile Page: Total number of vaults and keeps created by user is also displayed.
+  -Account Page: The total number of vaults and keeps created by user account is displayed.
+    -Vault Card: Displays the title of the vault on top of the image, as well as a style indication if the vault is private.
+  -Keep Details: Display the view and kept count. Keep details content should be spaced evenly along the y-axis according to the mock
+  -Keep Details: *If the user is logged in: modal has a dropdown of all the user's vaults. Selecting a vault should 'save' the keep, creating a many-to-many relationship between the vault and the saved keep.
+
 ❌🟨UI adheres to all phases of CodeWorks Design Requirements
   [https://www.figma.com/file/E2d4iw2PVMeKrusC2KEJDW/CodeWorks-Design-Guide?type=design&node-id=243-1&mode=design&t=IgEPM6hYcRY7uVGL-0]
+  -Lighthouse: Accessibility 95 or Higher
+  -Lighthouse: Best Practices 80 or Higher
+    -Aria IDs are not unique(my forms need new labels)
+  -Looks good on Desktop and Mobile
+  -Reactivity - changes to data do not require refresh
+  -Forms - validated properly 
+  -Hide Buttons when you shouldn't be able to use them 
+    -(move them to the right page)
 
 7 Stretch Goals - Not Required (goal: hit at least two)
 
