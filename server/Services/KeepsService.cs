@@ -3,10 +3,12 @@ namespace keepr_bcw_final.Services;
 public class KeepsService
 {
   private readonly KeepsRepository _repository;
+  private readonly VaultsService _vaultsService;
 
-  public KeepsService(KeepsRepository repository)
+  public KeepsService(KeepsRepository repository, VaultsService vaultsService)
   {
     _repository = repository;
+    _vaultsService = vaultsService;
   }
 
   internal Keep CreateKeep(Keep keepData)
@@ -26,6 +28,14 @@ public class KeepsService
     Keep keep = _repository.GetById(keepId);
     if (keep == null) throw new Exception($"Invalid Keep Id: {keepId}");
     return keep;
+  }
+
+  internal List<KeptKeep> GetKeepsByVaultId(int vaultId, string userId)
+  {
+    _vaultsService.GetVaultById(vaultId, userId);
+    
+    List<KeptKeep> keeps = _repository.GetKeepsByVaultId(vaultId);
+    return keeps;
   }
 
   internal Keep UpdateKeep(int keepId, Keep keepData, string userId)
@@ -50,4 +60,5 @@ public class KeepsService
 
     return $"{foundKeep.Name} has been deleted";
   }
+
 }

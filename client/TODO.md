@@ -94,20 +94,20 @@ Saturday 3hrs
 Sunday 
 No effective progress made.
 
-Monday 
+Monday 9hrs
 7:00 - 7:30 - Plan through Wednesday.
 9:00 - 12:30 - BE: Put and Delete Keeps. FE: Put Keeps
 1:30 - 5:00 - FE: Delete Keeps; BE: Create; 
 7:00 - 9:00 - BE: Get Vault By Id, Get Vaults by Profile; FE: Profile Page Setup
 
-Tuesday
+Tuesday 9hrs
 9:00 - 12:00 - Fe: Getting Profile,  getting vaults by profile, 
 1:00 - 5:00 - FE: Vaults Page Setup
 7:30 - 9:30 - BE: Delete and Put Vaults, FE: Delete and Create Vaults
 
 Wednesday
 9:00 - 12:00 - BE: KeepVaults and KeptKeep setup;
-12:00 - 12:30 - **First Grading**
+12:00 - 12:30 - **First Grading** After 32 hours
 1:30 - 5:00
 
 
