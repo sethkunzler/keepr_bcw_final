@@ -11,10 +11,16 @@ public class VaultKeepsService
     _vaultsService = vaultsService;
   }
 
-  internal KeptKeep CreateVaultKeep(VaultKeep vaultKeepData)
+  internal KeptKeep CreateVaultKeep(VaultKeep vaultKeepData, string userId)
   {
     // TODO ensure the vault belongs to the logged in user
-
+    int vaultId = vaultKeepData.VaultId;
+    Vault vaultToAddTo = _vaultsService.GetVaultById(vaultId, userId);
+    if (vaultToAddTo.CreatorId != userId) 
+    {
+      throw new Exception("You are not the creator of this Vault! access to add keeps to vaults is restricted to the creator only.");
+    }
+    
     KeptKeep vaultKeep = _repository.CreateKeptKeep(vaultKeepData);
     return vaultKeep;
   }
