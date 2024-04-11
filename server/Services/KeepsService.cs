@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Identity;
+
 namespace keepr_bcw_final.Services;
 
 public class KeepsService
@@ -55,6 +57,15 @@ public class KeepsService
 
     Keep keep = _repository.Update(keepUpdate);  
     return keep;
+  }
+
+  internal Keep ViewKeep(int keepId, string userId)
+  {
+    Keep keep = GetKeepById(keepId);
+    if (keep.CreatorId == userId) return keep; // If the creator sees their own keep, we don't want the view count to go up, I only want to know how many other people saw it. 
+    keep.Views++;
+    Keep keepViewed = _repository.Update(keep);
+    return keepViewed;
   }
 
   internal string DeleteKeep(int keepId, string userId)

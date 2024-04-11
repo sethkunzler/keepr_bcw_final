@@ -131,7 +131,7 @@ Wednesday
 ❌Users can Add keeps to vaults
   -TODO - FE: Form -multiSelect
   ❌Anytime a keep is kept in a vault the kept count is incremented
-  -TODO - BE: Postman - Strech Goals, Form
+  -TODO - BE: Postman - Stretch Goals, Form
 
 ✅All users have a public profile page
 
@@ -154,7 +154,7 @@ Postman:
   -Home Page: keep cards are displayed using a masonry layout.
     -Keep Card: keep's title and creator's picture displays on top of picture. Clicking on a card should open up a modal displaying the keep details.
     -Keep Card: Creator's picture should have a title tag displaying the creator's name.
-  -Vault Page: Displays total amount of keeps in vault (vaultkeeps) and vault cover image. 
+  -Vault Page: Displays total amount of keeps in vault (vaultKeeps) and vault cover image. 
   -Vault Page: Display name of vault and creator name (and description)
   -Profile Page: Total number of vaults and keeps created by user is also displayed.
   -Account Page: The total number of vaults and keeps created by user account is displayed.

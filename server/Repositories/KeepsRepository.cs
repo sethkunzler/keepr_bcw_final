@@ -100,7 +100,8 @@ public class KeepsRepository : IRepo<Keep>
     UPDATE keeps 
     Set 
     name = @name,
-    description = @description
+    description = @description,
+    views = @views
     WHERE id = @id;
 
     SELECT
