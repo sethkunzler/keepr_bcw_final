@@ -155,13 +155,13 @@ Postman:
   -Home Page: keep cards are displayed using a masonry layout.
     -Keep Card: keep's title and creator's picture displays on top of picture. Clicking on a card should open up a modal displaying the keep details.
     -Keep Card: Creator's picture should have a title tag displaying the creator's name.
+      -Keep Details: Display the view count and kept count.
+      -Keep Details: *If the user is logged in: modal has a dropdown of all the user's vaults. Selecting a vault should 'save' the keep, creating a many-to-many relationship between the vault and the saved keep.
   -Vault Page: Displays total amount of keeps in vault (vaultKeeps) and vault cover image. 
   -Vault Page: Display name of vault and creator name (and description)
   -Profile Page: Total number of vaults and keeps created by user is also displayed.
   -Account Page: The total number of vaults and keeps created by user account is displayed.
     -Vault Card: Displays the title of the vault on top of the image, as well as a style indication if the vault is private.
-  -Keep Details: Display the view and kept count. Keep details content should be spaced evenly along the y-axis according to the mock
-  -Keep Details: *If the user is logged in: modal has a dropdown of all the user's vaults. Selecting a vault should 'save' the keep, creating a many-to-many relationship between the vault and the saved keep.
 
 ❌🟨UI adheres to all phases of CodeWorks Design Requirements
   [https://www.figma.com/file/E2d4iw2PVMeKrusC2KEJDW/CodeWorks-Design-Guide?type=design&node-id=243-1&mode=design&t=IgEPM6hYcRY7uVGL-0]

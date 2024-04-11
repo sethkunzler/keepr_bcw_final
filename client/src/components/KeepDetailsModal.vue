@@ -18,14 +18,9 @@
               <div></div>
             </div>
             <!-- ANCHOR -->
-            <div class="col-md-6">
-              <div class="modal-header">
-                <div class="d-flex align-items-center">
-                </div>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <div>
+            <div class="col-md-6 d-flex flex-column align-self-stretch justify-content-center">
+              <div class="top-part">
+                <div class="top-content d-flex justify-content-between align-items-center p-1 m-1">
                   <div v-if="user.id == keep.creatorId">
                     <div class="dropdown">
                       <button role="button" data-bs-toggle="dropdown" aria-expanded="false" class="btn selectable">
@@ -38,6 +33,16 @@
                       </ul>
                     </div>
                   </div>
+                  <div class="d-flex align-items-center">
+                    <!-- TODO Views Count and Kept Count -->
+                  </div>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="bg-success bg-opacity-25 border p-1 my-1 rounded"></div>
+              </div>
+                
+              <div class="d-flex flex-grow-1 flex-column justify-content-between m-1 p-1">
+                <div class="middle-content d-flex flex-grow-1 flex-column">
                   <h3 class="modal-title text-center my-2" id="keepDetailsModalLabel">
                     {{ keep.name }}
                   </h3>
@@ -59,20 +64,22 @@
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="modal-footer">
-                <div class="mx-2">
-                  <div>
 
-                  </div>
-                  <router-link :to="{ name: 'Profile', params: { profileId: keep.creatorId} }" >
-                    <div role="button" @click="dismissModal()">
-                      <span class="me-1 text-success px-2">{{ keep.creator.name }}</span>
-                      <img class="creator-profile-picture border border-success border-2" :src="keep.creator.picture" :alt="keep.creator.name">
+                <div class="bottom-content mb-2">
+                  <div class="mx-2">
+                    <div>
+                      <!-- TODO Form - Add Keep to Vault -->
                     </div>
-                  </router-link>
+                    <router-link :to="{ name: 'Profile', params: { profileId: keep.creatorId} }" >
+                      <div role="button" @click="dismissModal()" class="text-end">
+                        <span class="me-1 text-success px-2">{{ keep.creator.name }}</span>
+                        <img class="creator-profile-picture border border-success border-2" :src="keep.creator.picture" :alt="keep.creator.name">
+                      </div>
+                    </router-link>
+                  </div>
                 </div>
               </div>
+
             </div>
           </section>
         </div>
