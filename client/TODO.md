@@ -121,8 +121,7 @@ Wednesday 10hrs
 
 ✅Visitors can see all keeps (login not required)
 ✅Clicking on a keep card opens the keep in a modal
-❌Anytime a keeps details are viewed, the keeps view count is incremented
-  -TODO FE: get request
+✅Anytime a keeps details are viewed, the keeps view count is incremented
 
 ❌The Vault Page shows only the keeps in that Vault
   -TODO - FE: get keeps, v-for keeps

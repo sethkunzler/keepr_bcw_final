@@ -33,8 +33,10 @@
                       </ul>
                     </div>
                   </div>
-                  <div class="d-flex align-items-center">
-                    <!-- TODO Views Count and Kept Count -->
+                  <div v-else class="p-3"></div>
+                  <div class="d-flex align-items-center justify-content-between p-2">
+                    <span class="mdi mdi-eye fs-5 mx-2"></span><span class="me-3">{{ keep.views }}</span>
+                    <span class="italic border mx-2 px-2 rounded">k</span><span class="me-3">{{ keep.kept }}</span>
                   </div>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
