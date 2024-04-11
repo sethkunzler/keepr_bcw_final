@@ -105,10 +105,11 @@ Tuesday 9hrs
 1:00 - 5:00 - FE: Vaults Page Setup
 7:30 - 9:30 - BE: Delete and Put Vaults, FE: Delete and Create Vaults
 
-Wednesday
+Wednesday 10hrs
 9:00 - 12:00 - BE: KeepVaults and KeptKeep setup;
 12:00 - 12:30 - **First Grading** After 32 hours
-1:30 - 5:00
+1:30 - 5:30 - BE: Get and Delete VaultKeeps, Get Keeps By Profile ID, Get Vaults for logged in user
+7:30 - 10:30 - BE: Put Keep's Viewed Count, Kept Count -&+, Put Account, Get Keeps for logged in user
 
 
 18 Requirements
@@ -121,7 +122,7 @@ Wednesday
 ✅Visitors can see all keeps (login not required)
 ✅Clicking on a keep card opens the keep in a modal
 ❌Anytime a keeps details are viewed, the keeps view count is incremented
-  -TODO BE: Postman- stretch goals, FE: get request
+  -TODO FE: get request
 
 ❌The Vault Page shows only the keeps in that Vault
   -TODO - FE: get keeps, v-for keeps
@@ -131,7 +132,7 @@ Wednesday
 ❌Users can Add keeps to vaults
   -TODO - FE: Form -multiSelect
   ❌Anytime a keep is kept in a vault the kept count is incremented
-  -TODO - BE: Postman - Stretch Goals, Form
+  -TODO - FE: Form
 
 ✅All users have a public profile page
 
@@ -140,7 +141,7 @@ Wednesday
 ✅The logged-in user can Create and Delete Vaults
 
 ❌The logged-in user can edit their account
-  BE: Postman - Stretch Goals, FE: Form
+  -TODO - FE: Form
 
 Postman:
 ✅All No Auth API Tests pass
