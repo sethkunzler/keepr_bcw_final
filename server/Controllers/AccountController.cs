@@ -6,16 +6,18 @@ public class AccountController : ControllerBase
 {
   private readonly AccountService _accountService;
   private readonly VaultsService _vaultsService;
+  private readonly KeepsService _keepsService;
   private readonly Auth0Provider _auth0Provider;
 
-  public AccountController(AccountService accountService, Auth0Provider auth0Provider, VaultsService vaultsService)
+  public AccountController(AccountService accountService, Auth0Provider auth0Provider, VaultsService vaultsService, KeepsService keepsService)
   {
     _accountService = accountService;
     _auth0Provider = auth0Provider;
     _vaultsService = vaultsService;
+    _keepsService = keepsService;
   }
 
-  [HttpGet]
+    [HttpGet]
   [Authorize]
   public async Task<ActionResult<Account>> Get()
   {
@@ -50,9 +52,23 @@ public class AccountController : ControllerBase
       return BadRequest(exception.Message);
     }
   }
-  // TODO get keeps by account 
+  [HttpGet("keeps")]
+  [Authorize]
+  public async Task<ActionResult<List<Keep>>> GetMyKeeps()
+  {
+    try
+    {
+      Account userInfo = await _auth0Provider.GetUserInfoAsync<Account>(HttpContext);
+      List<Keep> keeps = _keepsService.GetKeepsByProfileId(userInfo.Id);
+      return Ok(keeps);
+    }
+    catch (Exception exception)
+    {
+      return BadRequest(exception.Message);
+    }
+  }
+  
 
-  // TODO edit account
 
   [HttpPut]
   [Authorize]
