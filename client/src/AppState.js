@@ -10,12 +10,14 @@ export const AppState = reactive({
   activeProfile: null,
   /** @type {import('./models/Keep.js').Keep[]} */
   keeps: [],
-  /** @type {import('./models/Keep.js').Keep | {}} */
-  activeKeep: {},
+  /** @type {import('./models/Keep.js').Keep | null} */
+  activeKeep: null,
   /** @type {import('./models/Vault.js').Vault[]} */
-  vaults: [],
-  /** @type {import('./models/Vault.js').Vault | {}} */
-  activeVault: {},
+  vaults: [], //profile Vaults
+  /** @type {import('./models/Vault.js').Vault[]} */
+  myVaults: [], //logged in user's Vaults
+  /** @type {import('./models/Vault.js').Vault | null} */
+  activeVault: null,
   /** @type {import('./models/KeptKeep.js').KeptKeep[]} */
   vaultKeeps: [],
   /** @type Number */

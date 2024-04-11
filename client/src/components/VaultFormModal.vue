@@ -28,7 +28,7 @@
                   <span class="italic">Private vaults can only be seen by you</span>
                 </div>
                 <div class="form-check form-switch">
-                  <input class="form-check-input mt-2" type="checkbox" role="switch" id="isPrivate">
+                  <input v-model="editableData.isPrivate" class="form-check-input mt-2" type="checkbox" role="switch" id="isPrivate">
                   <label class="form-check-label fs-5" for="isPrivate">Make Vault Private?</label>
                 </div>
               </div> -->
@@ -51,13 +51,13 @@
   import { vaultsService } from '../services/VaultsService.js'
   export default {
     setup(){
-      const editableData = ref({ name: '', description: '', img: '', isPrivate: false})
+      const editableData = ref({ name: '', description: '', img: ''})
       return{
         editableData,
         async createVault() {
           try {
             const vault = await vaultsService.createVault(editableData.value)
-            // editableData.value = ref({ name: '', description: '', img: '', isPrivate: ''})
+            // editableData.value = ref({ name: '', description: '', img: '', isPrivate: false})
             Modal.getOrCreateInstance('#vaultFormModal').hide()
             Pop.success(`${vault.name} has been created`)
           }

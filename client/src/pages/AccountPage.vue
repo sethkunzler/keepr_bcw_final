@@ -20,7 +20,10 @@
               <div class="col-md-7">
                 <div class="text-center">
                   <h2 class="text-capitalize">{{ account.name }}</h2>
-                  <h5 class="italic">member since: <span class="bold">{{ account.createdAt.toLocaleDateString() }}</span></h5>
+                  <h5 class="italic">Keepr since: <span class="bold">{{ account.createdAt?.toLocaleDateString() }}</span></h5>
+                </div>
+                <div class="text-end">
+                  <span role="button" class="mdi mdi-pencil fs-3 selectable py-1 px-2 rounded" data-bs-toggle="modal" data-bs-target="#editAccountModal" title="Click to edit"></span>
                 </div>
               </div>
             </div>
@@ -29,6 +32,7 @@
       </section>
     </div>
   </div>
+<EditAccountModal />
 </template>
 
 <script>

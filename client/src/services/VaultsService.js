@@ -25,7 +25,7 @@ class VaultsService {
     return foundVault
   }
   async setActiveVault(vaultId) {
-    AppState.activeVault = {}
+    AppState.activeVault = null
     const newVault = await this.getVaultById(vaultId)
     AppState.activeVault = newVault
     // logger.log('This is the Active Vault in the App State', AppState.activeVault)
@@ -37,7 +37,7 @@ class VaultsService {
     const vaultIndex = AppState.vaults.findIndex(vault => vault.id == vaultId)
     if (vaultIndex == -1) throw new Error("Please contact tech support for help. Could not find the correct index. Found vault -1")
     AppState.vaults.splice(vaultIndex, 1)
-    AppState.activeVault = {}
+    AppState.activeVault = null
   }
 }
 

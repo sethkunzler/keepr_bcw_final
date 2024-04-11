@@ -4,6 +4,11 @@ import { logger } from "../utils/Logger.js";
 import { api } from "./AxiosService.js";
 
 class VaultKeepsService { 
+  async AddKeepToVaultById(data)
+  {
+    await api.post('api/vaultKeeps', data)
+    AppState.activeKeep.kept ++
+  }
   async getKeepsByVaultId(vaultId) {
     AppState.vaultKeeps = []
     const res = await api.get(`api/vaults/${vaultId}/keeps`);
@@ -24,17 +29,8 @@ class VaultKeepsService {
     if (keepIndex == -1) throw new Error("Please contact tech support for help. Could not find the correct index. Found vault keep -1")
     AppState.vaultKeeps.splice(keepIndex, 1)
     AppState.activeVaultKeepId = 0
-    AppState.activeKeep = {}
+    AppState.activeKeep = null
   }
 
-// async deleteKeep(keepId) {
-//   const res = await api.delete(`api/keeps/${keepId}`)
-//   logger.log('deleted keep', res.data)
-
-//   const keepIndex = AppState.keeps.findIndex(keep => keep.id == keepId)
-//   if (keepIndex == -1) throw new Error("Please contact tech support for help. Could not find the correct index. Found keep -1")
-//   AppState.keeps.splice(keepIndex, 1)
-//   AppState.activeKeep = {}
-// }
 }
 export const vaultKeepsService = new VaultKeepsService();

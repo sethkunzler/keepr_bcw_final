@@ -4,7 +4,7 @@
   <div class="modal fade" id="keepDetailsModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="keepDetailsModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl">
       <div class="modal-content">
-        <div v-if="keep.id" class="container">
+        <div v-if="keep != null" class="container">
           <section class="row">
             <div class="col-md-6 d-flex align-self-stretch justify-content-center">
               <div></div>
@@ -51,7 +51,7 @@
                   <div>
                     <div v-if="editing" class="form-floating">
                       <!-- TODO stretch goal edit description -->
-                      <form>
+                      <!-- <form>
                         <div>
                           <label for="description">Description</label>
                           <textarea class="form-control" placeholder="Write the description here" id="description" style="height: 40dvh">{{ editableData.description }}</textarea>
@@ -59,7 +59,7 @@
                         <div class="text-end my-2">
                           <button class="btn bg-success bg-opacity-50 bold">Save</button>
                         </div>
-                      </form>
+                      </form> -->
                     </div>
                     <div v-else>
                       <p><span class="me-3"></span>{{ keep.description }}</p>
@@ -76,7 +76,19 @@
                           </div>
                         </div>
                         <div v-else>
-                          <span>Add To Vault</span>
+                          <div class="dropdown">
+                            <button role="button" data-bs-toggle="dropdown" aria-expanded="false" class="btn selectable py-1 px-2">
+                              <span>Add To Vault</span>
+                            </button>
+                            <ul class="dropdown-menu text-start">
+                              <!-- TODO stretch goal only -->
+                              <!-- <li class="no-blue-select"><button type="button" class="dropdown-item" href="#"><span class="mdi mdi-pencil"></span> Edit Description</button></li> -->
+                              <li class="no-blue-select">
+                                <VaultKeepForm :keepId="keep.id"/>
+                              </li>
+                            </ul>
+                          </div>
+
                         </div>
                       <!-- TODO Form - Add Keep to Vault -->
                     </div>

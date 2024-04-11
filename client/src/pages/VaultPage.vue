@@ -1,5 +1,5 @@
 <template>
-  <div v-if="vault.id">
+  <div v-if="vault != null">
     <div class="banner-container text-center bg-success bg-opacity-50">
       <img class=" banner img-fluid rounded shadow-inset" :src="vault.img" :alt="vault.name">
     </div>

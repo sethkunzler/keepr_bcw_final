@@ -25,7 +25,7 @@ class KeepsService {
     return foundKeep
   }  
   async setActiveKeep(keepId) {
-    AppState.activeKeep = {}
+    AppState.activeKeep = null
     const newKeep = await this.getKeepById(keepId)
     AppState.activeKeep = newKeep
   }
@@ -36,7 +36,7 @@ class KeepsService {
     const keepIndex = AppState.keeps.findIndex(keep => keep.id == keepId)
     if (keepIndex == -1) throw new Error("Please contact tech support for help. Could not find the correct index. Found keep -1")
     AppState.keeps.splice(keepIndex, 1)
-    AppState.activeKeep = {}
+    AppState.activeKeep = null
   }
 }
 
