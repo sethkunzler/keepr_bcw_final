@@ -101,7 +101,8 @@ public class KeepsRepository : IRepo<Keep>
     Set 
     name = @name,
     description = @description,
-    views = @views
+    views = @views,
+    kept = @kept
     WHERE id = @id;
 
     SELECT

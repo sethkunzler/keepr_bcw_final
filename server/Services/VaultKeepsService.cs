@@ -4,14 +4,16 @@ public class VaultKeepsService
 {
   private readonly VaultKeepsRepository _repository;
   private readonly VaultsService _vaultsService;
+  private readonly KeepsService _keepsService;
 
-  public VaultKeepsService(VaultKeepsRepository repository, VaultsService vaultsService)
+  public VaultKeepsService(VaultKeepsRepository repository, VaultsService vaultsService, KeepsService keepsService)
   {
     _repository = repository;
     _vaultsService = vaultsService;
+    _keepsService = keepsService;
   }
 
-  internal KeptKeep CreateVaultKeep(VaultKeep vaultKeepData, string userId)
+    internal KeptKeep CreateVaultKeep(VaultKeep vaultKeepData, string userId)
   {
     // TODO ensure the vault belongs to the logged in user
     int vaultId = vaultKeepData.VaultId;
@@ -21,6 +23,9 @@ public class VaultKeepsService
       throw new Exception("You are not the creator of this Vault! access to add keeps to vaults is restricted to the creator only.");
     }
     
+    int keepId = vaultKeepData.KeepId;
+    _keepsService.KeepAKeep(keepId);
+
     KeptKeep vaultKeep = _repository.CreateKeptKeep(vaultKeepData);
     return vaultKeep;
   }

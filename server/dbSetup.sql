@@ -26,6 +26,10 @@ CREATE TABLE keeps(
   -- Kept Count is a Virtual
 );
 
+ALTER TABLE keeps ADD COLUMN kept INT DEFAULT 0 COMMENT 'Kept Count';
+
+DESC keeps;
+
 CREATE TABLE vaults(
   id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
   createdAt DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT 'Time Created',

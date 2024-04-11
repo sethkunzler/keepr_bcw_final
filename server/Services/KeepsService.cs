@@ -68,6 +68,15 @@ public class KeepsService
     return keepViewed;
   }
 
+  // Writing this made me cry😭 - the A is there to KEEP me sane!!
+  internal Keep KeepAKeep(int keepId)
+  {
+    Keep keep = GetKeepById(keepId);
+    keep.Kept++;
+    Keep keepKept = _repository.Update(keep);
+    return keepKept;
+  }
+  
   internal string DeleteKeep(int keepId, string userId)
   {
     Keep foundKeep = GetKeepById(keepId);
