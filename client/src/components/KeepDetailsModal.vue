@@ -68,17 +68,17 @@
                 </div>
 
                 <div class="bottom-content mb-2">
-                  <div class="mx-2">
-                    <div>
-                      <div>
-                        <div v-if="vaultKeepId > 0">
-                          <div role="button" @click="removeKeepFromVault(keep.id, vaultKeepId)" class="d-flex align-items-center selectable">
-                            <span class="mdi mdi-cancel"></span><span>Remove From Vault</span>
+                  <div class="mx-2 d-flex justify-content-between">
+                    <div class="d-flex align-items-center ">
+                        <div v-if="vaultKeepId > 0 ">
+                          <div role="button" @click="removeKeepFromVault(keep.id, vaultKeepId)" class="selectable rounded py-1 px-3 border">
+                            <span class="mdi mdi-cancel"> Remove From Vault</span>
                           </div>
                         </div>
-                      </div>
+                        <div v-else>
+                          <span>Add To Vault</span>
+                        </div>
                       <!-- TODO Form - Add Keep to Vault -->
-
                     </div>
                     <router-link :to="{ name: 'Profile', params: { profileId: keep.creatorId} }" >
                       <div role="button" @click="dismissModal()" class="text-end">

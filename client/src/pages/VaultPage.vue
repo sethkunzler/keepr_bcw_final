@@ -10,7 +10,7 @@
         <div class="my-2 p-1 bg-success bg-opacity-25 shadow-sm rounded border"></div>
       </div>
       <div class="d-flex justify-content-center align-items-center my-2 px-2">
-        <h2 class="text-center mx-3 border p-2 rounded ">{{ keeps.length }}  Keeps</h2>
+        <h2 class="text-center mx-3 border p-2 rounded shadow">{{ keeps.length }}  Keeps</h2>
         <div>
           <div class="p-1">
             <h6>About:</h6>
