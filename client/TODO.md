@@ -123,9 +123,8 @@ Wednesday 10hrs
 ✅Clicking on a keep card opens the keep in a modal
 ✅Anytime a keeps details are viewed, the keeps view count is incremented
 
-❌The Vault Page shows only the keeps in that Vault
-  -TODO - FE: get keeps, v-for keeps
-  ❌On the Vault Page, users can remove keeps from their vaults
+✅The Vault Page shows only the keeps in that Vault
+❌On the Vault Page, users can remove keeps from their vaults
   -TODO - @Click
 ✅The user should be pushed back to the home page when they attempt to open a Vault Page for a vault they do not have access to
 ❌Users can Add keeps to vaults

@@ -10,7 +10,6 @@ class KeepsService {
     const newKeep = new Keep(res.data)
     AppState.keeps.push(newKeep)
     return newKeep
-
   }
   async getKeeps() {
     const res = await api.get("api/keeps")
@@ -24,13 +23,12 @@ class KeepsService {
     // logger.log("Found this keep", res.data)
     const foundKeep = new Keep(res.data)
     return foundKeep
-  }
+  }  
   async setActiveKeep(keepId) {
     AppState.activeKeep = {}
     const newKeep = await this.getKeepById(keepId)
     AppState.activeKeep = newKeep
   }
-
   async deleteKeep(keepId) {
     const res = await api.delete(`api/keeps/${keepId}`)
     logger.log('deleted keep', res.data)

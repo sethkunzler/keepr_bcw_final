@@ -70,7 +70,15 @@
                 <div class="bottom-content mb-2">
                   <div class="mx-2">
                     <div>
+                      <div>
+                        <div v-if="vaultKeepId > 0">
+                          <div role="button" @click="removeKeepFromVault(keep.id, vaultKeepId)" class="d-flex align-items-center selectable">
+                            <span class="mdi mdi-cancel"></span><span>Remove From Vault</span>
+                          </div>
+                        </div>
+                      </div>
                       <!-- TODO Form - Add Keep to Vault -->
+
                     </div>
                     <router-link :to="{ name: 'Profile', params: { profileId: keep.creatorId} }" >
                       <div role="button" @click="dismissModal()" class="text-end">
@@ -127,6 +135,9 @@ import { AppState } from "../AppState.js"
 import Pop from "../utils/Pop.js";
 import { keepsService } from "../services/KeepsService.js";
 import { Modal } from "bootstrap";
+import { logger } from "../utils/Logger.js";
+import { vaultKeepsService } from "../services/VaultKeepsService.js";
+
 export default {
   setup(){
     let editing = false;
@@ -134,6 +145,7 @@ export default {
       editing, 
       // const editableData: ref(() => {description: "this is my description"}),
       keep: computed(() => AppState.activeKeep),
+      vaultKeepId: computed(() => AppState.activeVaultKeepId),
       user: computed(() => AppState.user),
 
       async deleteKeep(keepId) {
@@ -141,6 +153,17 @@ export default {
           const yes = await Pop.confirm()
           if (!yes) return
           await keepsService.deleteKeep(keepId);
+          Modal.getOrCreateInstance('#keepDetailsModal').hide()
+        }
+        catch (error){
+          Pop.error(error);
+        }
+      },
+      async removeKeepFromVault(keepId, vaultKeepId) {
+        try {
+          const yes = await Pop.confirm()
+          if (!yes) return
+          await vaultKeepsService.removeKeepFromVault(keepId, vaultKeepId)
           Modal.getOrCreateInstance('#keepDetailsModal').hide()
         }
         catch (error){

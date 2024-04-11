@@ -49,6 +49,9 @@ footer {
 .italic {
   font-style: italic;
 }
+.text-shadow {
+  text-shadow: 1px 1px 3px black;
+}
 .img-filler-lg {
   background-color: rgba($color: #858585, $alpha: .50);
   border-radius: 16px;
