@@ -38,6 +38,9 @@ public class VaultKeepsService
     {
       throw new Exception("You are not the Creator of this Vault. Access to remove keeps is restricted to the Creator only");
     }
+    int keepId = keepToRemove.KeepId;
+    _keepsService.UnKeepAKeep(keepId);
+
     _repository.Destroy(vaultKeepId);
   }
 

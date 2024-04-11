@@ -76,6 +76,13 @@ public class KeepsService
     Keep keepKept = _repository.Update(keep);
     return keepKept;
   }
+  internal Keep UnKeepAKeep(int keepId)
+  {
+    Keep keep = GetKeepById(keepId);
+    keep.Kept--;
+    Keep keepUnKept = _repository.Update(keep);
+    return keepUnKept;
+  }
   
   internal string DeleteKeep(int keepId, string userId)
   {
