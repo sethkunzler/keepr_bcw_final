@@ -111,6 +111,14 @@ Wednesday 10hrs
 1:30 - 5:30 - BE: Get and Delete VaultKeeps, Get Keeps By Profile ID, Get Vaults for logged in user
 7:30 - 10:30 - BE: Put Keep's Viewed Count, Kept Count -&+, Put Account, Get Keeps for logged in user
 
+Thursday
+7:00 - 7:30 FE: styled Active Keep card according to mock requirements
+9:00 -12:30 FE: View and Keep Count are displayed, Vault Page displays Vault info
+1:30 - 5:00 FE: Add and Remove Keeps to and From a vault.
+5:30 - 6:00 FE: Account Edit Form Modal 
+
+Friday
+8:30 - 9:00 FE: The logged-in user can edit their account
 
 18 Requirements
 ✅🟨❌
@@ -127,10 +135,8 @@ Wednesday 10hrs
 ✅On the Vault Page, users can remove keeps from their vaults
 
 ✅The user should be pushed back to the home page when they attempt to open a Vault Page for a vault they do not have access to
-❌Users can Add keeps to vaults
-  -TODO - FE: Form -multiSelect
-  ❌Anytime a keep is kept in a vault the kept count is incremented
-  -TODO - FE: Form
+✅Users can Add keeps to vaults
+✅Anytime a keep is kept in a vault the kept count is incremented
 
 ✅All users have a public profile page
 
@@ -138,8 +144,7 @@ Wednesday 10hrs
 
 ✅The logged-in user can Create and Delete Vaults
 
-❌The logged-in user can edit their account
-  -TODO - FE: Form
+✅The logged-in user can edit their account
 
 Postman:
 ✅All No Auth API Tests pass

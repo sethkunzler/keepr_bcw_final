@@ -17,7 +17,7 @@ public class AccountController : ControllerBase
     _keepsService = keepsService;
   }
 
-    [HttpGet]
+  [HttpGet]
   [Authorize]
   public async Task<ActionResult<Account>> Get()
   {
