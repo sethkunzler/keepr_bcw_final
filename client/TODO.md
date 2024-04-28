@@ -120,6 +120,8 @@ Thursday
 Friday
 8:30 - 9:00 FE: The logged-in user can edit their account
 
+
+
 18 Requirements
 ✅🟨❌
   students may miss up to 2 and still be passing.
@@ -192,3 +194,10 @@ Postman:
 ❌Users can extend their profile to include a bio, hobbies, ect...
 
 ❌Users can share to other popular social media
+
+---
+
+Post Submission Updates:
+forget my computer and not commit anything for a week even though I promised myself that I would.
+
+added link to my resume.
