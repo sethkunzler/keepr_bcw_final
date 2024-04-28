@@ -8,7 +8,6 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <!-- TODO Edit Name, img and coverImg -->
         <form @submit.prevent="updateAccount">
           <div class="form-floating my-2">
             <input v-model="editableData.name" type="text" class="form-control" id="name" placeholder="Display Name">
@@ -39,6 +38,7 @@ import {computed, ref, watch} from "vue"
 import { AppState } from "../AppState.js"
 import Pop from "../utils/Pop.js"
 import { accountService } from "../services/AccountService.js"
+import { Modal } from "bootstrap"
 export default {
 setup(){
   const account = computed(() => AppState.account)
@@ -49,6 +49,7 @@ setup(){
     async updateAccount() {
       try {
         await accountService.updateAccount(editableData.value)
+        Modal.getOrCreateInstance('#editAccountModal').hide()
       }
       catch (error){
         Pop.error(error);

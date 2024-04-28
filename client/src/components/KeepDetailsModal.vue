@@ -70,8 +70,9 @@
                 <div class="bottom-content mb-2">
                   <div class="mx-2 d-flex justify-content-between">
                     <div class="d-flex align-items-center ">
+                      <div v-if="user != null">
                         <div v-if="vaultKeepId > 0 ">
-                          <div role="button" @click="removeKeepFromVault(keep.id, vaultKeepId)" class="selectable rounded py-1 px-3 border">
+                          <div v-if="vault.creatorId == user.id" role="button" @click="removeKeepFromVault(keep.id, vaultKeepId)" class="selectable rounded py-1 px-3 border">
                             <span class="mdi mdi-cancel"> Remove From Vault</span>
                           </div>
                         </div>
@@ -81,16 +82,13 @@
                               <span>Add To Vault</span>
                             </button>
                             <ul class="dropdown-menu text-start">
-                              <!-- TODO stretch goal only -->
-                              <!-- <li class="no-blue-select"><button type="button" class="dropdown-item" href="#"><span class="mdi mdi-pencil"></span> Edit Description</button></li> -->
                               <li class="no-blue-select">
                                 <VaultKeepForm :keepId="keep.id"/>
                               </li>
                             </ul>
                           </div>
-
                         </div>
-                      <!-- TODO Form - Add Keep to Vault -->
+                      </div>
                     </div>
                     <router-link :to="{ name: 'Profile', params: { profileId: keep.creatorId} }" >
                       <div role="button" @click="dismissModal()" class="text-end">
@@ -147,7 +145,6 @@ import { AppState } from "../AppState.js"
 import Pop from "../utils/Pop.js";
 import { keepsService } from "../services/KeepsService.js";
 import { Modal } from "bootstrap";
-import { logger } from "../utils/Logger.js";
 import { vaultKeepsService } from "../services/VaultKeepsService.js";
 
 export default {
@@ -158,7 +155,8 @@ export default {
       // const editableData: ref(() => {description: "this is my description"}),
       keep: computed(() => AppState.activeKeep),
       vaultKeepId: computed(() => AppState.activeVaultKeepId),
-      user: computed(() => AppState.user),
+      vault: computed(() => AppState.activeVault),
+      user: computed(() => AppState.account),
 
       async deleteKeep(keepId) {
         try {

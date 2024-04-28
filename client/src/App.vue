@@ -105,4 +105,16 @@ footer {
   aspect-ratio: 1/1;
   border-radius: 50%;
 }
+.fake-masonry {
+  --gap: clamp(1rem, 5vmin, 2rem);
+  columns: 350px; 
+  gap: var(--gap);
+  width: 96%;
+  max-width: 1510px;
+  margin: 1rem;
+}
+.fake-masonry > * {
+  break-inside: avoid;
+  margin-bottom: var(--gap);
+}
 </style>

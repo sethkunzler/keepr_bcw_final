@@ -14,7 +14,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav me-auto">
-          <!-- TODO -->
+          <!-- TODO write an About Page -->
           <!-- <li>
             <router-link :to="{ name: 'About' }" class="btn text-dark lighten-30 selectable text-capitalize fs-5 mx-1">
               About

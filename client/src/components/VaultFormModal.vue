@@ -22,8 +22,7 @@
                 <textarea v-model="editableData.description" class="form-control" placeholder="Write the description here" id="description" style="height: 100px" maxlength="1000" required></textarea>
                 <label for="description">Description</label>  
               </div>
-              <!-- TODO isPrivate -->
-              <!-- <div class="p-3 my-3 border rounded">
+              <div class="p-3 my-3 border rounded">
                 <div>
                   <span class="italic">Private vaults can only be seen by you</span>
                 </div>
@@ -31,7 +30,7 @@
                   <input v-model="editableData.isPrivate" class="form-check-input mt-2" type="checkbox" role="switch" id="isPrivate">
                   <label class="form-check-label fs-5" for="isPrivate">Make Vault Private?</label>
                 </div>
-              </div> -->
+              </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" maxlength="500" required>Close</button>
                 <button type="submit" class="btn btn-primary">Submit</button>

@@ -27,7 +27,7 @@ CREATE TABLE keeps(
 );
 
 ALTER TABLE keeps ADD COLUMN kept INT DEFAULT 0 COMMENT 'Kept Count';
-
+DROP TABLE vaultKeeps, vaults, keeps;
 DESC keeps;
 
 CREATE TABLE vaults(
@@ -39,9 +39,9 @@ CREATE TABLE vaults(
   img VARCHAR(1000) NOT NULL,
   isPrivate BOOLEAN NOT NULL COMMENT 'Private or Public Condition',
   creatorId VARCHAR(255) NOT NULL,
-  FOREIGN KEY (creatorId) REFERENCES accounts (id) ON DELETE CASCADE,
+  FOREIGN KEY (creatorId) REFERENCES accounts (id) ON DELETE CASCADE
   -- Creator Profile is a Virtual
-  UNIQUE (name, creatorId)
+  -- UNIQUE (name, creatorId)
 );
 
 CREATE TABLE vaultKeeps(

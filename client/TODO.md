@@ -33,10 +33,10 @@ Sunday 4hrs
 12-1 ---Lunch 
 1:00 - 2:00 - FE: Create Vault 🟨 (is Private defaults false)
 2-4 --- General Conference 
-4:00 - 5:00 BE: Vault Keeps - Post ❌
+4:00 - 5:00 BE: Vault Keeps - Post ✅
 5-6 --- Dinner
 6-8 --- Chilling & going home 
-8:00 - 9:00 - BE: get Vault Keeps ❌
+8:00 - 9:00 - BE: get Vault Keeps ✅
 
 
 Monday 9hrs
@@ -46,20 +46,20 @@ Monday 9hrs
 7:00 - 9:00 FE: Creating Vaults BE: Editing Vaults ✅
 
 Tuesday 9hrs
-9:00 - 12:30 BE: Deleting Vaults; FE: Editing and Deleting Vaults; BE: Post Vault Keeps ❌
-1:30 - 5:00 BE: Get Vault Keeps; FE: Get and create Vault Keeps; BE: Delete Vault Keeps ❌
-7:00 - 9:00 FE: Delete Vault Keeps ❌
+9:00 - 12:30 BE: Deleting Vaults; FE: Editing and Deleting Vaults; BE: Post Vault Keeps ✅
+1:30 - 5:00 BE: Get Vault Keeps; FE: Get and create Vault Keeps; BE: Delete Vault Keeps ✅
+7:00 - 9:00 FE: Delete Vault Keeps ✅
 
 Wednesday Morning
 9:00 - 9:00 **FIRST GRADING** After 35 scheduled hours
 
 Wednesday 8hrs
-9:00 - 12:30 BE: All Gets by Profile Id, Get vaults by AccountId, 
-1:30 - 5:00 FE: Items display to their proper pages.
-7:00 - 9:00 BE: No-Auth Tests, starting on InvalidAuth Tests
+9:00 - 12:30 BE: All Gets by Profile Id, Get vaults by AccountId,  ✅
+1:30 - 5:00 FE: Items display to their proper pages. ✅
+7:00 - 9:00 BE: No-Auth Tests, starting on InvalidAuth Tests ✅
 
 Thursday Morning 4hrs
-7:00 - 7:30 Revaluate My Plan
+7:00 - 7:30 Revaluate My Plan ❌
 9:00 - 12:30 {To PLAN}
 ** (( Plan to be done by this point ))
 
@@ -71,8 +71,8 @@ Thursday Night 2hrs
 7:00 - 9:00 {To PLAN}
 
 Friday 7hrs
-9:00 - 12:30 {To PLAN}
-1:30 - 4:00 {To PLAN}
+9:00 - 12:30 Ux Mock Requirements
+1:30 - 4:00  UI Design Requirements 
 4:00 - 5:00 **LAST GRADING** after 55 scheduled hours
 
 enjoy te weekend
@@ -185,7 +185,7 @@ Postman:
 
 ❌Tags are not duplicated (Games,games,GAMES)
 
-❌Stretch Goal API tests pass
+✅Stretch Goal API tests pass
 
 ❌Implement pagination or infinite scroll
 

@@ -18,6 +18,13 @@ class KeepsService {
     AppState.keeps = newKeeps
     // logger.log("Keeps in my AppState", AppState.keeps)
   }
+  async getKeepsByProfileId(profileId) {
+    AppState.profileKeeps = []
+    const res = await api.get(`api/profiles/${profileId}/keeps`)
+    const newKeeps = res.data.map(pojo => new Keep(pojo))
+    AppState.profileKeeps = newKeeps
+    logger.log("Keeps in App State", AppState.profileKeeps)
+  }
   async getKeepById(keepId) {
     const res = await api.get(`api/keeps/${keepId}`)
     // logger.log("Found this keep", res.data)

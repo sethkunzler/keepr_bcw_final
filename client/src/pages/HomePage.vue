@@ -2,17 +2,18 @@
   <div class="container">
     <section class="row">
       <div class="col-md-12">
-        <h1>Browse All Keeps</h1>
-      </div>
-      <div v-for="keep in keeps" class="col-md-4">
-        <!-- TODO opens Keep Details Modal -->
-        <KeepSimpleCard :keep="keep" />
-        <!-- STUB -->
-        <!-- <div  class="p-3 m-2 bg-success bg-opacity-25 rounded d-flex justify-content-center align-items-center">
-          <img class="img-fluid rounded shadow" :src="keep.img" :alt="keep.name">
-        </div> -->
+        <h1 class="italic">Browse All Keeps</h1>
       </div>
     </section>
+  </div>
+  <div class="mx-auto fake-masonry">
+    <div v-for="keep in keeps" class="">
+      <KeepSimpleCard :keep="keep" />
+      <!-- STUB -->
+      <!-- <div  class="p-3 m-2 bg-success bg-opacity-25 rounded d-flex justify-content-center align-items-center">
+        <img class="img-fluid rounded shadow" :src="keep.img" :alt="keep.name">
+      </div> -->
+    </div>
   </div>
 </template>
 
@@ -61,5 +62,4 @@ export default {
     }
   }
 }
-
 </style>
