@@ -21,12 +21,13 @@ CREATE TABLE keeps(
   img VARCHAR(1000) NOT NULL,
   views INT NOT NULL DEFAULT 0,
   creatorId VARCHAR(255) NOT NULL,
-  FOREIGN KEY (creatorId) REFERENCES accounts (id) ON DELETE CASCADE
+  FOREIGN KEY (creatorId) REFERENCES accounts (id) ON DELETE CASCADE,
+  kept INT DEFAULT 0 COMMENT 'Kept Count';
   -- Creator profile is a Virtual
   -- Kept Count is a Virtual
 );
 
-ALTER TABLE keeps ADD COLUMN kept INT DEFAULT 0 COMMENT 'Kept Count';
+-- ALTER TABLE keeps ADD COLUMN kept INT DEFAULT 0 COMMENT 'Kept Count';
 DROP TABLE vaultKeeps, vaults, keeps;
 DESC keeps;
 
